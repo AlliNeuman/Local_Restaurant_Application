@@ -1,0 +1,11 @@
+<h3>@<%= @user.username %> Restaurants</h3>
+
+<table>
+<% @user.restaurants.each do |restaurant| %>
+<td><%= restaurant.name %></td>
+<td><%= restaurant.neighborhood %></td>
+<td><%= restaurant.address %></td>
+<td><%= restaurant.category %></td>
+<td><%= restaurant.tips %></td>
+<%end%>
+</table>
