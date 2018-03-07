@@ -27,4 +27,14 @@ class RestaurantController < ApplicationController
     end
   end
 
+  get '/restaurants/:id/edit' do
+    if logged_in?
+      @restaurant = Restaurant.find_by(params[:id])
+      erb :'restaurants/edit'
+    else
+      redirect to '/login'
+    end
+  end
+
+
 end
