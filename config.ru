@@ -8,6 +8,5 @@ end
 use Rack::MethodOverride
 
 use RestaurantController
-use LocationController
 use UserController
 run ApplicationController
