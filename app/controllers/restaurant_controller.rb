@@ -10,11 +10,19 @@ class RestaurantController < ApplicationController
   end
 
   post '/restaurants' do
-    @restaurant = Restaurant.new(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
-    if @restaurant.save
-      redirect to "/restaurants/#{@restaurant.id}"
+    if logged_in?
+      if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
+        redirect to "/restaurants/new"
+      else
+        @restaurant = current_user.restaurants.build(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
+        if @restaurant.save
+          redirect to "/restaurants/#{@restaurant.id}"
+        else
+          redirect to "/restaurants/new"
+        end
+      end
     else
-      redirect to "/restaurants/new"
+      redirect to '/login'
     end
   end
 
@@ -40,7 +48,7 @@ class RestaurantController < ApplicationController
     end
   end
 
-  patch '/'
+  patch '/restaurant'
 
 
 end
