@@ -17,4 +17,14 @@ class RestaurantController < ApplicationController
       redirect to "/restaurants/new"
     end
   end
+
+  get '/restaurants/:id' do
+    if logged_in?
+      @restaurant = Restaurant.find_by(params[:id])
+      erb :'restaurants/show'
+    else
+      redirect to '/login'
+    end
+  end
+
 end
