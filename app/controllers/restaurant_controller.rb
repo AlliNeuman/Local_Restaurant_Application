@@ -69,9 +69,15 @@ class RestaurantController < ApplicationController
     end
   end
 
-
-
-
-
-
+  delete '/restaurants/:id/' do
+    if logged_in?
+      @restaurant = Restaurant.find_by_id(params[:id])
+      if @restaurant && @restaurant.user == current_user
+        @restaurant.delete
+      end
+      redirect to '/restaurants'
+    else
+      redirect to '/login'
+    end
+  end
 end
