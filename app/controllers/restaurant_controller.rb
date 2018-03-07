@@ -48,7 +48,27 @@ class RestaurantController < ApplicationController
     end
   end
 
-  patch '/restaurant'
+  patch '/restaurants/:id' do
+    if logged_in?
+      if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
+        redirect to "/restaurants/#{params[:id]}/edit"
+      else
+        @restaurant = Restaurant.find_by_id(params[:id])
+        if @restaurant && @restaurant.user == current_user
+          if @restaurant.update(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
+            redirect to "/restaurants/#{@restaurant.id}"
+          else
+            redirect to "/restaurants/#{@restaurant.id}/edit"
+          end
+        else
+          redirect to '/restaurants'
+        end
+      end
+    else
+      redirect to '/login'
+    end
+  end
+
 
 
 end
