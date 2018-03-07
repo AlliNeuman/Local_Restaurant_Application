@@ -4,3 +4,14 @@
 <h2>Neighborhood:  <%= @restaurant.neighborhood%></h2>
 <h3>Category:  <%= @restaurant.category%></h3>
 <h3>Recommendations:  <%= @restaurant.tips %></h3>
+
+<form method="post" action="/restaurants/<%=@restaurant.id%>">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Restaurant">
+</form>
+
+<br>
+
+<form method="get" action="/restaurants/<%=@restaurant.id%>/edit">
+  <input type="submit" name="edit" value="Edit Restaurant">
+</form>
