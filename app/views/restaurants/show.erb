@@ -3,7 +3,7 @@
 <p>Address:  <%= @restaurant.street_address %></p>
 <h2>Neighborhood:  <%= @restaurant.neighborhood%></h2>
 <h3>Category:  <%= @restaurant.category%></h3>
-<h3>Recommendations:  <%= @restaurant.tips %></h3>
+<h3>Insider Tips:  <%= @restaurant.tips %></h3>
 <p>Added by: <%=@restaurant.user.username%></p><br><br>
 <form method="post" action="/restaurants/<%=@restaurant.id%>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
