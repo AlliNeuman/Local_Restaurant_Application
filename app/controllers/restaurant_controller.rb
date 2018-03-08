@@ -10,21 +10,8 @@ class RestaurantController < ApplicationController
   end
 
   get '/restaurants/new' do
-    erb :'restaurants/new'
-  end
-
-  post '/restaurants' do
     if logged_in?
-      if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
-        redirect to "/restaurants/new"
-      else
-        @restaurant = current_user.restaurants.build(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
-        if @restaurant.save
-          redirect to "/restaurants/#{@restaurant.id}"
-        else
-          redirect to "/restaurants/new"
-        end
-      end
+      erb :'restaurants/new'
     else
       redirect to '/login'
     end
@@ -45,7 +32,24 @@ class RestaurantController < ApplicationController
       if @restaurant && @restaurant.user == current_user
         erb :'restaurants/edit'
       else
-        redirect to '/restaurants/#{@restaurant.id}'
+        redirect to "/restaurants/#{@restaurant.id}"
+      end
+    else
+      redirect to '/login'
+    end
+  end
+
+  post '/restaurants' do
+    if logged_in?
+      if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
+        redirect to "/restaurants/new"
+      else
+        @restaurant = current_user.restaurants.build(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
+        if @restaurant.save
+          redirect to "/restaurants/#{@restaurant.id}"
+        else
+          redirect to "/restaurants/new"
+        end
       end
     else
       redirect to '/login'
@@ -79,7 +83,7 @@ class RestaurantController < ApplicationController
       if @restaurant && @restaurant.user == current_user
         @restaurant.delete
       end
-      redirect to '/restaurants'
+      redirect to '/'
     else
       redirect to '/login'
     end

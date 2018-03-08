@@ -1,0 +1,27 @@
+body {
+  font-family: 'Poppins', Helvetica, sans-serif;
+  font-size: 13px;
+  background-image: url("marble.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  margin-bottom: 0px;
+  padding: 1;
+  background-color:white;
+}
+
+
+h3.titles, h1.titles, h2.titles {
+  text-align: center;
+  font-family: 'Delius Unicase', cursive;
+  font-weight: bold;
+  text-transform: capitalize;
+
+}
+
+div.uppercase {
+  text-transform: uppercase;
+
+}

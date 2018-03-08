@@ -1,11 +1,13 @@
-<h3>@<%= @user.username %> Restaurants</h3>
-
-<table>
+<h1 class="titles"><%= @user.username.capitalize %>'s Restaurants</h1>
+<br>
 <% @user.restaurants.each do |restaurant| %>
-<td><%= restaurant.name %></td>
-<td><%= restaurant.neighborhood %></td>
-<td><%= restaurant.address %></td>
-<td><%= restaurant.category %></td>
-<td><%= restaurant.tips %></td>
+<h3 class="titles"><%= restaurant.name %></h3>
+<div class="show">
+<p><%= restaurant.neighborhood %></p>
+<p><%= restaurant.street_address %></p>
+<p><%= restaurant.category %></p>
+</div>
+<p><%= restaurant.tips %></p>
 <%end%>
-</table>
+
+<h2 class="titles">Other Saved Restaurants</h2>

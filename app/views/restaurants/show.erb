@@ -1,10 +1,14 @@
 <br>
-<h1><%= @restaurant.name %></h1>
-<p>Address:  <%= @restaurant.street_address %></p>
+<h1 class="titles"><%= @restaurant.name %></h1>
+<div class="uppercase">
+<p>Address:  <%= @restaurant.street_address.uppercase %></p>
 <h2>Neighborhood:  <%= @restaurant.neighborhood%></h2>
 <h3>Category:  <%= @restaurant.category%></h3>
+</div>
 <h3>Insider Tips:  <%= @restaurant.tips %></h3>
 <p>Added by: <%=@restaurant.user.username%></p><br><br>
+
+<% if current_user == @restaurant.user %>
 <form method="post" action="/restaurants/<%=@restaurant.id%>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Restaurant">
@@ -16,3 +20,7 @@
   <input type="submit" name="edit" value="Edit Restaurant">
 </form>
 <br>
+<% else %>
+<form class="post" action="index.html" method="post">
+
+</form>

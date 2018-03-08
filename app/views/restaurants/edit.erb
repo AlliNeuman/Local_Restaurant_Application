@@ -10,8 +10,8 @@
   <label>Street Address: </label><br>
   <input type="text" name="street_address" value="<%=@restaurant.street_address%>"><br><br>
   <label>Category: </label><br>
-  <textarea name="category" rows="8" cols="80"><%=@restaurant.category%></textarea><br><br>
+  <input type="text" name="category" value="<%=@restaurant.category%>"><br><br>
   <label>Notes about what the restaurant is known for: </label><br>
-  <textarea name="tips" rows="8" cols="80"><%=@restaurant.tips%></textarea><br><br>
+  <textarea name="tips" rows="8" cols="50"><%=@restaurant.tips%></textarea><br><br>
   <input type="submit" value="submit">
 </form>
