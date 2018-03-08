@@ -1,3 +1,6 @@
 User.create(username: "Colin", email: "colin@colin.com", password: "colinpw")
 User.create(username: "Dave", email: "dave@dave.com", password: "davepw")
 User.create(username: "Stacy", email: "stacy@stacy.com", password: "stacypw")
+Restaurant.create(name: "Seamus McDaniels", neighborhood: "Dogtown", street_address: "1208 Tamm Ave.", category: "Irish Pub", tips: "Get their burger and ask for a side of ranch!", user: User.find_by_username("Dave"))
+Restaurant.create(name: "Favazzas", neighborhood: "The Hill", street_address: "5201 SW Ave.", category: "Italian", tips: "Order the baked pasta with meatballs!", user: User.find_by_username("Dave"))
+Restaurant.create(name: "Bar Louie", neighborhood: "Central West End", street_address: "14 Maryland Plaza", category: "American", tips: "Go on Tuesday's for dollar burgers!", user: User.find_by_username("Colin"))
