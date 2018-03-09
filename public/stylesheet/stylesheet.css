@@ -1,6 +1,6 @@
 /* //////////  FORM STYLING  //////////*/
 input[type="radio"]{
-  margin: 0 20px 0 20px;
+  padding-top: -10;
 }
 
 /* //////////  LAYOUT STYLING  //////////*/
