@@ -1,14 +1,8 @@
-<br>
-<h1 class="titles"><%= @restaurant.name %></h1>
-<div class="uppercase">
-<p>Address:  <%= @restaurant.street_address.uppercase %></p>
-<h2>Neighborhood:  <%= @restaurant.neighborhood%></h2>
-<h3>Category:  <%= @restaurant.category%></h3>
-</div>
-<h3>Insider Tips:  <%= @restaurant.tips %></h3>
-<p>Added by: <%=@restaurant.user.username%></p><br><br>
 
+<img src="/images/abstractgray.jpg" class="img-fluid" style="text-center">
+<div class="container"
 <% if current_user == @restaurant.user %>
+
 <form method="post" action="/restaurants/<%=@restaurant.id%>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Restaurant">
@@ -19,8 +13,83 @@
 <form method="get" action="/restaurants/<%=@restaurant.id%>/edit">
   <input type="submit" name="edit" value="Edit Restaurant">
 </form>
-<br>
-<% else %>
-<form class="post" action="index.html" method="post">
 
+<% else %>
+
+<form class="post" action="/user/:slug" method="post">
+  <div class="container">
+    <div class="form-check form-check-inline align-middle">
+      <input class="form-check-input" type="radio" name="likes" id="been_there" value="been_there">
+      <label class="form-check-label" for="been_there">Been Here!</label>
+    </div>
+    <div class="form-check form-check-inline align-middle">
+      <input class="form-check-input" type="radio" name="likes" id="wish_list" value="wish_list">
+      <label class="form-check-label" for="wish_list">Still Need to Go!</label>
+    </div>
+    <input type="submit" name="likes" value="Bookmark">
+  </div>
 </form>
+
+<% end %>
+</div>
+
+<div class="container">
+    <div class="row">
+    <div class="col-4">
+      <h1 class="text-uppercase"><%= @restaurant.name %></h1>
+    </div>
+    <div class="col-8">
+      <h3 class="text-uppercase">Insider Tips</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <p class="text-capitalize"><%= @restaurant.street_address%></p>
+    </div>
+    <div class="col-8">
+      <p><%= @restaurant.tips %></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3 class="text-uppercase">Neighborhood</h3>
+    </div>
+    <div class="col-8">
+      <p class="font-weight-bold text-capitalize">Added by: <%=@restaurant.user.username%></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <p class="text-capitalize"><%= @restaurant.neighborhood%></p>
+    </div>
+    <div class="col-8">
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3 class="text-uppercase">Category</h3>
+    </div>
+    <div class="col-8">
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <p class="text-capitalize"><%= @restaurant.category%></p>
+    </div>
+
+    <div class="col-8">
+
+    </div>
+  </div>
+
+
+</div>
+<br>
+<br>

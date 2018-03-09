@@ -1,27 +1,98 @@
+/* //////////  FORM STYLING  //////////*/
+input[type="radio"]{
+  margin: 0 20px 0 20px;
+}
+
+/* //////////  LAYOUT STYLING  //////////*/
 body {
-  font-family: 'Poppins', Helvetica, sans-serif;
-  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+  line-height: 2;
+  margin: 0;
   background-image: url("marble.png");
   background-repeat: no-repeat;
   background-size: cover;
+
+a {
+  color: #ae9d78;
+  text-decoration: none;
 }
 
-nav {
-  margin-bottom: 0px;
-  padding: 1;
-  background-color:white;
+a:hover {
+  color: #333;
+}
+
+p {
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+b, strong{
+  font-weight: 700;
 }
 
 
-h3.titles, h1.titles, h2.titles {
-  text-align: center;
-  font-family: 'Delius Unicase', cursive;
-  font-weight: bold;
+/*//////////  HEADINGS  //////////*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333;
+  font-family: 'Fredoka One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.2px;
+  margin: 0 0 25px;
+}
+
+h1 {
+  font-size: 30px;
   text-transform: capitalize;
 
 }
 
-div.uppercase {
+h2 {
+  font-size: 24px;
   text-transform: uppercase;
 
+}
+
+h3 {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+h4 {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 16px;
+  text-trasnform: capitalize;
+}
+
+h6 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+
+/* /////////// NAVBAR //////////*/
+nav {
+  border: 0;
+  height: 1px;
+  margin-bottom: 0px;
+  padding: 0;
+  position: absolute;
 }
