@@ -32,7 +32,7 @@ class UserController < ApplicationController
     if !logged_in?
       erb :'users/login'
     else
-      redirect to '/restaurants'
+      redirect to '/users/:slug'
     end
   end
 
