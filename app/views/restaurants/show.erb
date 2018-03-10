@@ -1,7 +1,7 @@
 
 <br>
-<h1 class="text-uppercase text-center"><%= @restaurant.name %></h1>
-<p class="text-capitalize text-center"><%= @restaurant.street_address%></p>
+<h1 class="text-uppercase text-center"><%= @created_restaurant.name %></h1>
+<p class="text-capitalize text-center"><%= @created_restaurant.street_address%></p>
 
 
 <div class="container">
@@ -9,20 +9,20 @@
     <div class="col-4">
 
       <h5 class="text-uppercase">Neighborhood</h5>
-      <p class="text-capitalize"><%= @restaurant.neighborhood%></p>
+      <p class="text-capitalize"><%= @created_restaurant.neighborhood%></p>
       <h5 class="text-uppercase">Category</h5>
-      <p class="text-capitalize"><%= @restaurant.category%></p>
+      <p class="text-capitalize"><%= @created_restaurant.category%></p>
 
-      <% if current_user == @restaurant.user %>
+      <% if current_user == @created_restaurant.user %>
 
-      <form method="post" action="/restaurants/<%=@restaurant.id%>">
+      <form method="post" action="/restaurants/<%=@created_restaurant.id%>">
         <input id="hidden" type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete Restaurant">
       </form>
 
       <br>
 
-      <form method="get" action="/restaurants/<%=@restaurant.id%>/edit">
+      <form method="get" action="/restaurants/<%=@created_restaurant.id%>/edit">
         <input type="submit" name="edit" value="Edit Restaurant">
       </form>
 
@@ -47,8 +47,8 @@
     </div>
     <div class="col-8">
       <h3 class="text-uppercase">Insider Tips</h3>
-      <p><%= @restaurant.tips %></p>
-      <p class="font-weight-bold text-capitalize">Added by: <%=@restaurant.user.username%></p>
+      <p><%= @created_restaurant.tips %></p>
+      <p class="font-weight-bold text-capitalize">Added by: <%=@created_restaurant.user.username%></p>
 
     </div>
   </div>

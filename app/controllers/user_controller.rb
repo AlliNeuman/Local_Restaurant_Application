@@ -5,7 +5,7 @@ class UserController < ApplicationController
   end
 
   get '/users/:slug' do
-    @user = User.find_by_slug(params[:slug])
+    @creator = User.find_by_slug(params[:slug])
     erb :'users/show'
   end
 
@@ -21,9 +21,9 @@ class UserController < ApplicationController
     if params[:username] == "" || params[:email] == "" || params[:password] == ""
       redirect to '/signup'
     else
-      @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
-      @user.save
-      session[:user_id] = @user.id
+      @creator = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+      @creator.save
+      session[:user_id] = @creator.id
       redirect to '/restaurants'
     end
   end

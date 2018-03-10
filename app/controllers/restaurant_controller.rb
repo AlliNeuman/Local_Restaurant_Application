@@ -2,7 +2,7 @@ class RestaurantController < ApplicationController
 
   get '/restaurants' do
     if logged_in?
-      @restaurants = Restaurant.all
+      @created_restaurants = Restaurant.all
       erb :'restaurants/index'
     else
       redirect to '/login'
@@ -19,7 +19,7 @@ class RestaurantController < ApplicationController
 
   get '/restaurants/:id' do
     if logged_in?
-      @restaurant = Restaurant.find_by(params[:id])
+      @created_restaurant = Restaurant.find_by(params[:id])
       erb :'restaurants/show'
     else
       redirect to '/login'
@@ -28,11 +28,11 @@ class RestaurantController < ApplicationController
 
   get '/restaurants/:id/edit' do
     if logged_in?
-      @restaurant = Restaurant.find_by(params[:id])
-      if @restaurant && @restaurant.user == current_user
+      @created_restaurant = Restaurant.find_by(params[:id])
+      if @created_restaurant && @created_restaurant.creator == current_user
         erb :'restaurants/edit'
       else
-        redirect to "/restaurants/#{@restaurant.id}"
+        redirect to "/restaurants/#{@created_restaurant.id}"
       end
     else
       redirect to '/login'
@@ -44,9 +44,9 @@ class RestaurantController < ApplicationController
       if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
         redirect to "/restaurants/new"
       else
-        @restaurant = current_user.restaurants.build(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
-        if @restaurant.save
-          redirect to "/restaurants/#{@restaurant.id}"
+        @created_restaurant = current_user.restaurants.build(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
+        if @created_restaurant.save
+          redirect to "/restaurants/#{@created_restaurant.id}"
         else
           redirect to "/restaurants/new"
         end
@@ -61,12 +61,12 @@ class RestaurantController < ApplicationController
       if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
         redirect to "/restaurants/#{params[:id]}/edit"
       else
-        @restaurant = Restaurant.find_by_id(params[:id])
-        if @restaurant && @restaurant.user == current_user
-          if @restaurant.update(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
-            redirect to "/restaurants/#{@restaurant.id}"
+        @created_restaurant = Restaurant.find_by_id(params[:id])
+        if @created_restaurant && @created_restaurant.creator == current_user
+          if @created_restaurant.update(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
+            redirect to "/restaurants/#{@created_restaurant.id}"
           else
-            redirect to "/restaurants/#{@restaurant.id}/edit"
+            redirect to "/restaurants/#{@created_restaurant.id}/edit"
           end
         else
           redirect to '/restaurants'
@@ -79,9 +79,9 @@ class RestaurantController < ApplicationController
 
   delete '/restaurants/:id' do
     if logged_in?
-      @restaurant = Restaurant.find_by_id(params[:id])
-      if @restaurant && @restaurant.user == current_user
-        @restaurant.delete
+      @created_restaurant = Restaurant.find_by_id(params[:id])
+      if @created_restaurant && @created_restaurant.creator == current_user
+        @created_restaurant.delete
       end
       redirect to '/'
     else
