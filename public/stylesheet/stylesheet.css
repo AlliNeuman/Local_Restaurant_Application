@@ -11,7 +11,7 @@ body {
   font: normal 14px Roboto,arial,sans-serif;
 }
 
-.container {
+.container.form {
     padding: 25px;
     position: fixed;
 }

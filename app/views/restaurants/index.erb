@@ -4,9 +4,10 @@
 <div>
 <% @created_restaurants.each do |created_restaurant| %>
 <div>
-  <a href="/restaurants/<%=restaurant.id%>"><%=created_restaurant.name%></a>
-  <p><%=created_restaurant.category%></p>
-  <p><%=created_restaurant.neighborhood%></p>
+  <a href="/restaurants/<%=created_restaurant.id%>"><%=created_restaurant.name%></a>
+  <p><%=created_restaurant.category%>
+    <br>
+  <%=created_restaurant.neighborhood%></p>
 </div>
 <% end %>
 </div>

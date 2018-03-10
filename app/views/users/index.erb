@@ -4,10 +4,12 @@
 <div>
 <% @creators.each do |creator| %>
 <div>
-  <a href="/users/<%=creator.id%>"><%=creator.name%></a>
-  <!-- @created_restaurants.each do |created_restaurants| -->
-  <p><%=restaurant.category%></p>
-  <p><%=restaurant.neighborhood%></p>
+  <a href="/users/<%=creator.id%>"><%=creator.username%></a>
+  <% @created_restaurants.each do |created_restaurant| %>
+  <a href="/restaurants/<%=created_restaurant.id%>"><%=created_restaurant.creator.name%></p>
+
+
+  <% end %>
 </div>
 <% end %>
 </div>

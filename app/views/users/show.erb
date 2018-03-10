@@ -1,14 +1,14 @@
-<h1 class="titles"><%= @user.username.capitalize %>'s Restaurants</h1>
+<h1 class="titles"><%= @creator.username.capitalize %>'s Restaurants</h1>
 <br>
-<% @user.restaurants.each do |restaurant| %>
-<div class="container home restaurants">
-  <h3><%= restaurant.name %></h3>
+<% @creator.created_restaurants.each do |created_restaurant| %>
+<div class="home-restaurants">
+  <h3><%= created_restaurant.name %></h3>
 
-  <p><%= restaurant.neighborhood %></p>
-  <p><%= restaurant.street_address %></p>
-  <p><%= restaurant.category %></p>
-
-  <p><%= restaurant.tips %></p>
+  <p>
+  <%= created_restaurant.neighborhood %><br>
+  <%= created_restaurant.street_address%><br>
+  <%= created_restaurant.category %><br>
+  <%= created_restaurant.tips %></p>
 </div> <!--// end container //-->
 <br>
 <%end%>
