@@ -4,17 +4,21 @@ input[type="radio"]{
 }
 
 /* //////////  LAYOUT STYLING  //////////*/
+
+
 body {
+  padding-top: 65px;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 200;
   letter-spacing: 0.5px;
   line-height: 2;
   margin: 0;
-  background-image: "marble.png";
+  background: url(../images/marble.png)
   background-repeat: repeat-x;
   background-position: center;
   background-attachment: fixed;
+}
 
 a {
   color: #ae9d78;
@@ -92,11 +96,11 @@ h6 {
 /* /////////// NAVBAR //////////*/
 nav div.container {
   border-style: solid;
-  border-width: 5px;
+  border-width: 1px;
   border-color: #F1F1F1
   height: 1px;
   margin-bottom: 0px;
-  padding: 5px;
+  padding: 2px;
   position: absolute;
 }
 
