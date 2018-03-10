@@ -11,7 +11,7 @@ body {
   letter-spacing: 0.5px;
   line-height: 2;
   margin: 0;
-  background-image: url("images/marble.png");
+  background-image: "marble.png";
   background-repeat: repeat-x;
   background-position: center;
   background-attachment: fixed;
