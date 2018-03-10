@@ -13,7 +13,7 @@
       <h5 class="text-uppercase">Category</h5>
       <p class="text-capitalize"><%= @created_restaurant.category%></p>
 
-      <% if current_user == @created_restaurant.user %>
+      <% if current_user == @created_restaurant.creator %>
 
       <form method="post" action="/restaurants/<%=@created_restaurant.id%>">
         <input id="hidden" type="hidden" name="_method" value="DELETE">
@@ -48,7 +48,7 @@
     <div class="col-8">
       <h3 class="text-uppercase">Insider Tips</h3>
       <p><%= @created_restaurant.tips %></p>
-      <p class="font-weight-bold text-capitalize">Added by: <%=@created_restaurant.user.username%></p>
+      <p class="font-weight-bold text-capitalize">Added by: <%=@created_restaurant.creator.username%></p>
 
     </div>
   </div>

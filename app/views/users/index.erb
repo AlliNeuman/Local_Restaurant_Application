@@ -1,0 +1,13 @@
+<h1>Browse Users</h1>
+
+<br>
+<div>
+<% @creators.each do |creator| %>
+<div>
+  <a href="/users/<%=creator.id%>"><%=creator.name%></a>
+  <!-- @created_restaurants.each do |created_restaurants| -->
+  <p><%=restaurant.category%></p>
+  <p><%=restaurant.neighborhood%></p>
+</div>
+<% end %>
+</div>

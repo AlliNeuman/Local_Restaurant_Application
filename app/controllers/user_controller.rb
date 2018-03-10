@@ -1,7 +1,13 @@
 class UserController < ApplicationController
 
   get '/users' do
-    erb :'/users/all'
+    if logged_in?
+      @created_restaurants = Restaurant.all
+      @creators = User.all
+      erb :'users/index'
+    else
+      redirect to '/login'
+    end
   end
 
   get '/users/:slug' do
@@ -54,5 +60,4 @@ class UserController < ApplicationController
       redirect to '/'
     end
   end
-
 end
