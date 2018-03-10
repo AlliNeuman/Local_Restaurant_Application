@@ -40,7 +40,7 @@ class UserController < ApplicationController
     user = User.find_by(:username => params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect to "/restaurants"
+      redirect to "/users/:slug"
     else
       redirect to "/signup"
     end
