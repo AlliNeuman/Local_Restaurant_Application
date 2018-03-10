@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :restaurants
+  has_many :created_restaurants, class_name: "Restaurant"
+  has_many :bookmarks
+  has_many :restaurants, through: :bookmarks
 
   has_secure_password
 
