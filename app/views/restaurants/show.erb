@@ -5,14 +5,18 @@
 
 
 <div class="container">
-    <div class="row">
-    <div class="col-4">
-
-      <h5 class="text-uppercase">Neighborhood</h5>
-      <p class="text-capitalize"><%= @created_restaurant.neighborhood%></p>
-      <h5 class="text-uppercase">Category</h5>
-      <p class="text-capitalize"><%= @created_restaurant.category%></p>
-
+  <div class="row">
+    <div class="col-4 text-capitalize">
+      <div class="form-all">
+        <h5>Neighborhood</h5>
+        <p><%= @created_restaurant.neighborhood%></p>
+      </div>
+      <br><br>
+      <div class="form-all">
+        <h5>Category</h5>
+        <p><%= @created_restaurant.category%></p>
+      </div>
+      <br>
       <% if current_user == @created_restaurant.creator %>
 
       <form method="post" action="/restaurants/<%=@created_restaurant.id%>">
@@ -27,17 +31,19 @@
       </form>
 
       <% else %>
-
+      <br>
       <form class="post" action="/user/:slug" method="post">
         <div class="container text-left">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="likes" id="been_there" value="been_there">
             <label class="form-check-label" for="been_there">Been There!</label>
           </div>
+          <br>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="likes" id="wish_list" value="wish_list">
             <label class="form-check-label" for="wish_list">Still Need to Go!</label>
           </div>
+          <br>
           <input type="submit" name="likes" value="Bookmark">
         </div>
       </form>
@@ -46,10 +52,11 @@
 
     </div>
     <div class="col-8">
-      <h3 class="text-uppercase">Insider Tips</h3>
-      <p><%= @created_restaurant.tips %></p>
-      <p class="font-weight-bold text-capitalize">Added by: <%=@created_restaurant.creator.username%></p>
-
+      <div class="form-all">
+        <h3 class="text-capitalize">Insider Tips</h3>
+        <p><%= @created_restaurant.tips %></p>
+        <p class="font-weight-bold text-capitalize">Added by: <%=@created_restaurant.creator.username%></p>
+      </div>
     </div>
   </div>
 

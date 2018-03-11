@@ -2,7 +2,6 @@ class UserController < ApplicationController
 
   get '/users' do
     if logged_in?
-      @created_restaurants = Restaurant.all
       @creators = User.all
       erb :'users/index'
     else
@@ -47,8 +46,8 @@ class UserController < ApplicationController
   end
 
   post '/login' do
-    @creator = User.find_by(:username => params[:username])
-    if @creator && @creator.authenticate(params[:password])
+    user = User.find_by(:username => params[:username])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect to "/users/:slug"
     else

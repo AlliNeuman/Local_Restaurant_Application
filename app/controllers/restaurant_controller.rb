@@ -19,7 +19,7 @@ class RestaurantController < ApplicationController
 
   get '/restaurants/:id' do
     if logged_in?
-      @created_restaurant = Restaurant.find_by(params[:id])
+      @created_restaurant = Restaurant.find_by(id: params[:id])
       erb :'restaurants/show'
     else
       redirect to '/login'
@@ -28,7 +28,7 @@ class RestaurantController < ApplicationController
 
   get '/restaurants/:id/edit' do
     if logged_in?
-      @created_restaurant = Restaurant.find_by(params[:id])
+      @created_restaurant = Restaurant.find_by(id: params[:id])
       if @created_restaurant && @created_restaurant.creator == current_user
         erb :'restaurants/edit'
       else
