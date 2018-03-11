@@ -59,20 +59,26 @@ class RestaurantController < ApplicationController
   patch '/restaurants/:id' do
     if logged_in?
       if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
+
+        flash[:message] = "Please input information to all fields."
         redirect to "/restaurants/#{params[:id]}/edit"
       else
         @created_restaurant = Restaurant.find_by_id(params[:id])
         if @created_restaurant && @created_restaurant.creator == current_user
           if @created_restaurant.update(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
+            flash[:message] = "You have successfully edited your restaurant entry."
             redirect to "/restaurants/#{@created_restaurant.id}"
           else
+            flash[:message] = "Do you want to save your edits?"
             redirect to "/restaurants/#{@created_restaurant.id}/edit"
           end
         else
+          flash[:message] = "Sorry, you're not authorized to edit this entry."
           redirect to '/restaurants'
         end
       end
     else
+      flash[:message] = "Please login before continuing."
       redirect to '/login'
     end
   end
@@ -82,9 +88,13 @@ class RestaurantController < ApplicationController
       @created_restaurant = Restaurant.find_by_id(params[:id])
       if @created_restaurant && @created_restaurant.creator == current_user
         @created_restaurant.delete
+        flash[:message] = "You have successfully deleted your restaurant entry."
+        redirect to '/'
+      else
+        flash[:message] = "Sorry, you don't have authority to delete this restaurant entry."
       end
-      redirect to '/'
     else
+      flash[:message] = "Please log in if you would like to delete your entry."
       redirect to '/login'
     end
   end
