@@ -1,17 +1,19 @@
 <h3>Edit Restaurant</h3>
 <br><br>
-
+<div class="form-all">
 <form method="post" action="/restaurants/<%=@created_restaurant.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
   <label>Restaurant Name: </label><br>
-  <input type="text" name="name" value="<%=@restaurant.name%>"><br><br>
+  <input type="text" name="name" value="<%=@created_restaurant.name%>"><br><br>
   <label>Neighborhood: </label><br>
-  <input type="text" name="neighborhood" value="<%=@restaurant.neighborhood%>"><br><br>
+  <input type="text" name="neighborhood" value="<%=@created_restaurant.neighborhood%>"><br><br>
   <label>Street Address: </label><br>
-  <input type="text" name="street_address" value="<%=@restaurant.street_address%>"><br><br>
+  <input type="text" name="street_address" value="<%=@created_restaurant.street_address%>"><br><br>
   <label>Category: </label><br>
-  <input type="text" name="category" value="<%=@restaurant.category%>"><br><br>
+  <input type="text" name="category" value="<%=@created_restaurant.category%>"><br><br>
   <label>Notes about what the restaurant is known for: </label><br>
-  <textarea name="tips" rows="8" cols="50"><%=@restaurant.tips%></textarea><br><br>
+  <textarea name="tips" rows="8" cols="50"><%=@created_restaurant.tips%></textarea><br><br>
   <input type="submit" value="submit">
 </form>
+</div>
+
