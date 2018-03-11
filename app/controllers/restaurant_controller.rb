@@ -42,12 +42,15 @@ class RestaurantController < ApplicationController
   post '/restaurants' do
     if logged_in?
       if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
+        flash[:message] = "Make sure to fill out all fields."
         redirect to "/restaurants/new"
       else
-        @created_restaurant = current_user.restaurants.build(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
+        @created_restaurant = current_user.created_restaurants.build(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
         if @created_restaurant.save
+          flash[:message] = "Your restaurant was successfully saved."
           redirect to "/restaurants/#{@created_restaurant.id}"
         else
+          flash[:message] = "Make sure to save your restaurant entry."
           redirect to "/restaurants/new"
         end
       end
