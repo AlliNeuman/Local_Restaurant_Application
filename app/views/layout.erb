@@ -25,6 +25,7 @@
 
       <% if logged_in? %>
       <a href="/users/<%=current_user.username%>">Home</a>
+      <a href="/restaurants">Restaurants</a>
       <a href="/restaurants/new">Create Restaurant</a>
       <a href="/logout">Log Out</a>
       <p>Welcome, <%= current_user.username %></p>
@@ -35,11 +36,17 @@
       <% end %>
       </div>
     </nav>
-    <div class="container">
-
+  <br>
+  <div class="container">
+    <div class="flash-message">
+      <% if flash.has?(:message)%>
+      <%= flash[:message]%>
+      <% flash[:message] = nil %>
+      <%end%>
+    </div>
+      <br>
       <%= yield %>
 
-    </div>
   </div>
     <!--///// JS BOOTSTRAP JQUERY & POPPER /////-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

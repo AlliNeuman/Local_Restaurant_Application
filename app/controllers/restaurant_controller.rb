@@ -91,10 +91,10 @@ class RestaurantController < ApplicationController
         flash[:message] = "You have successfully deleted your restaurant entry."
         redirect to '/'
       else
-        flash[:message] = "Sorry, you don't have authority to delete this restaurant entry."
+        flash.now[:notice] = "Sorry, you don't have authority to delete this restaurant entry."
       end
     else
-      flash[:message] = "Please log in if you would like to delete your entry."
+      flash.now[:notice] = "Please log in if you would like to delete your entry."
       redirect to '/login'
     end
   end

@@ -74,3 +74,12 @@ h4 {
   margin: 8px 0;
   box-sizing: border-box;
 } */
+
+/* ///////STYLING FLASH MESSAGES ///////*/
+div.flash-message {
+  background-color: #66ff99;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+  text-align: center;
+}
