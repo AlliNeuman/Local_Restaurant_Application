@@ -47,6 +47,8 @@ class RestaurantController < ApplicationController
       else
         @created_restaurant = current_user.created_restaurants.build(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
         if @created_restaurant.save
+          Bookmark.create(user_id: @created_restaurant.user_id, restaurant_id: @created_restaurant.id)
+          # line of code to create a bookmark automatically. Need to assign the user_id, restaurant_id and can I have a been there on the create new restaurant page?
           flash[:message] = "Your restaurant was successfully saved."
           redirect to "/restaurants/#{@created_restaurant.id}"
         else
