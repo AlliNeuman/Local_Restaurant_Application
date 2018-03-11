@@ -46,6 +46,11 @@ h4 {
     text-align: center;
 }
 
+.index-page {
+  opacity: 0.75;
+
+}
+
 /* ABSOLUTE CENTER/RESPONSIVE FORM */
 .Absolute-Center {
   margin: auto;

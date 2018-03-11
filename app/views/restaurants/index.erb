@@ -1,7 +1,7 @@
 <h1>Browse Restaurants</h1>
 
 <br>
-<div>
+<div class="container form-all text-center index-page">
 <% @created_restaurants.each do |created_restaurant| %>
 <div>
   <a href="/restaurants/<%=created_restaurant.id%>"><%=created_restaurant.name%></a>
