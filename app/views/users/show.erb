@@ -1,6 +1,6 @@
 <h1 class="titles"><%= @creator.username.capitalize %>'s Restaurants</h1>
 <br>
-<% @creator.created_restaurants.each do |created_restaurant| %>
+<% @creator.each do |created_restaurant| %>
 <div class="home-restaurants">
   <h3><%= created_restaurant.name %></h3>
 

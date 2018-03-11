@@ -11,8 +11,12 @@ class UserController < ApplicationController
   end
 
   get '/users/:slug' do
-    @creator = User.find_by_slug(params[:slug])
-    erb :'users/show'
+    if logged_in?
+      @creator = User.find_by_slug(params[:slug])
+      erb :'users/show'
+    else
+      redirect to '/login'
+    end
   end
 
   get '/signup' do
@@ -43,8 +47,8 @@ class UserController < ApplicationController
   end
 
   post '/login' do
-    user = User.find_by(:username => params[:username])
-    if user && user.authenticate(params[:password])
+    @creator = User.find_by(:username => params[:username])
+    if @creator && @creator.authenticate(params[:password])
       session[:user_id] = user.id
       redirect to "/users/:slug"
     else
