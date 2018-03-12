@@ -1,9 +1,9 @@
-<h1><%= @creator.username.capitalize %>'s Restaurants</h1>
+<h1 class="titles"><%= @creator.username.capitalize %>'s Restaurants</h1>
 
-<div class="form-all" id="home-view">
+<div class="form-all grid-container" id="home-view">
 <% @creator.created_restaurants.each do |created_restaurant| %>
 
-  <a href="/restaurants/<%=created_restaurant.id%>"><%=created_restaurant.name%></a>
+  <a href="/restaurants/<%=created_restaurant.id%>" class="grid-item"><%=created_restaurant.name%></a>
 
   <br>
 <%end%>
