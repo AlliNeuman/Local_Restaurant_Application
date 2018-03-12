@@ -3,19 +3,25 @@
           <h4>Add a Restaurant to the Database!</h4>
 
           <form action="/restaurants" id="new_restaurant" method="post">
-            <input type="text" name="name" class="form-control input-sm chat-input" placeholder="Restaurant Name">
+            <input type="text" name="name" class="form-control" placeholder="Restaurant Name">
             <br>
-            <input type="text" name="neighborhood" class="form-control input-sm chat-input" placeholder="Neighborhood">
+            <input type="text" name="neighborhood" class="form-control" placeholder="Neighborhood">
             <br>
-            <input type="text" name="street_address" class="form-control input-sm chat-input" placeholder="Street Address">
+            <input type="text" name="street_address" class="form-control" placeholder="Street Address">
             <br>
-            <textarea name="category" class="form-control input-sm chat-input" form="new_restaurant" rows="2" cols="50" placeholder="Category (i.e. Chinese, Italian, Pub)"></textarea>
+            <textarea name="category" class="form-control" form="new_restaurant" rows="2" cols="50" placeholder="Category (i.e. Chinese, Italian, Pub)"></textarea>
             <label></label><br>
-            <textarea name="tips" class="form-control input-sm chat-input" form="new_restaurant" rows="4" cols="50" placeholder="Notes about what the restaurant is known for (i.e. amazing burrito, best wings, romantic night out)"></textarea>
+            <textarea name="tips" class="form-control" form="new_restaurant" rows="4" cols="50" placeholder="Notes about what the restaurant is known for (i.e. amazing burrito, best wings, romantic night out)"></textarea>
             <br>
+            <div class="bookmark">
+              <input id="visited" type="radio" name="visited" value="visited">Been There!</input>
+            <br>
+            <input id="wish-list" type="radio" name="visited" value="wish-list">Still Need To Go!</input>
+            <br>
+          </div>
             <div class="wrapper">
               <span class="col-7 text-right">
-                <input type="submit" class="btn btn-primary btn-md" value="submit">
+                <input type="submit" class="buttons" value="submit">
               </span>
             </div>
           </form>
