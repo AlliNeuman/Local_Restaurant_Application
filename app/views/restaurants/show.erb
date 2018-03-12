@@ -1,60 +1,62 @@
-
-<h1 class=""><%= @created_restaurant.name %></h1>
-<h3 class=""><%= @created_restaurant.street_address%></h3>
-
-<div class="form-all">
-  <h5>Neighborhood</h5>
-  <p><%= @created_restaurant.neighborhood%></p>
+<div class="titles" id="restaurant-show">
+  <h1><%= @created_restaurant.name %></h1>
+  <h3><%= @created_restaurant.street_address%></h3>
 </div>
+  <div class="grid-container">
+    <div class="form-all grid-item">
+      <h5>Neighborhood</h5>
+      <p><%= @created_restaurant.neighborhood%></p>
+    </div>
 
-<br><br>
+    <br><br>
 
-<div class="form-all">
-  <h5>Category</h5>
-  <p><%= @created_restaurant.category%></p>
-</div>
+    <div class="form-all grid-item">
+      <h5>Category</h5>
+      <p><%= @created_restaurant.category%></p>
+    </div>
 
-<br><br>
+    <br><br>
+    <div class="form-all grid-item">
+      <h3 class="">Insider Tips</h3>
+      <p><%= @created_restaurant.tips %></p>
+      <p>Added by: <%=@created_restaurant.creator.username%></p>
+    </div>
 
-<div class="form-all">
-  <h3 class="">Insider Tips</h3>
-  <p><%= @created_restaurant.tips %></p>
-  <p class="font-weight-bold text-capitalize">Added by: <%=@created_restaurant.creator.username%></p>
-</div>
+
+    <% if current_user == @created_restaurant.creator %>
+    <div class="form-all grid item">
+
+      <form method="post" action="/restaurants/<%=@created_restaurant.id%>">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete Restaurant">
+      </form>
+
+      <br>
+
+      <form method="get" action="/restaurants/<%=@created_restaurant.id%>/edit">
+        <input type="submit" name="edit" value="Edit Restaurant">
+      </form>
+
+      <% else %>
+      <br>
+
+      <form action="/home" method="post">
+        <input class="form-check-input" type="radio" name="likes" id="been_there" value="been_there">
+        <label class="form-check-label" for="been_there">Been There!</label>
+
+        <br>
+
+        <input class="form-check-input" type="radio" name="likes" id="wish_list" value="wish_list">
+        <label class="form-check-label" for="wish_list">Still Need to Go!</label>
+
+        <br>
+
+        <input type="submit" name="likes" value="Bookmark">
+
+      </form>
+
+      <% end %>
 
 
-<% if current_user == @created_restaurant.creator %>
-<div class="form-all">
-
-  <form method="post" action="/restaurants/<%=@created_restaurant.id%>">
-    <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Restaurant">
-  </form>
-
-  <br>
-
-  <form method="get" action="/restaurants/<%=@created_restaurant.id%>/edit">
-    <input type="submit" name="edit" value="Edit Restaurant">
-  </form>
-
-  <% else %>
-  <br>
-
-  <form action="/home" method="post">
-    <input class="form-check-input" type="radio" name="likes" id="been_there" value="been_there">
-    <label class="form-check-label" for="been_there">Been There!</label>
-
-    <br>
-
-    <input class="form-check-input" type="radio" name="likes" id="wish_list" value="wish_list">
-    <label class="form-check-label" for="wish_list">Still Need to Go!</label>
-
-    <br>
-
-    <input type="submit" name="likes" value="Bookmark">
-
-  </form>
-
-  <% end %>
-
+  </div>
 </div>
