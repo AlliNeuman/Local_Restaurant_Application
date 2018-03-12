@@ -10,6 +10,9 @@ class UserController < ApplicationController
   #   end
   # end
 
+  get '/home' do
+    erb :'users/show'
+  end
 
   get '/signup' do
     if !logged_in?
@@ -32,15 +35,15 @@ class UserController < ApplicationController
       end
     end
 
-    get '/users/:slug' do
-      if logged_in?
-        @creator = User.find_by_slug(params[:slug])
-        erb :'users/show'
-      else
-        flash[:message] = "Please log in to view the user."
-        redirect to '/login'
-      end
-    end
+    # get '/users/:slug' do
+    #   if logged_in?
+    #     @creator = User.find_by_slug(params[:slug])
+    #     erb :'users/show'
+    #   else
+    #     flash[:message] = "Please log in to view the user."
+    #     redirect to '/login'
+    #   end
+    # end
 
     get '/login' do
       if !logged_in?

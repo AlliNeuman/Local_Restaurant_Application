@@ -4,23 +4,26 @@ body.bkgd-image {
 }
 
 /* ////////// FORM STYLING //////////*/
-@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+
 body {
   background-color:#fff;
   -webkit-font-smoothing: antialiased;
-  font: normal 14px Roboto,arial,sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Poppins", arial, sans-serif;
 }
 
-.container.form {
-    padding: 25px;
+div.outer-div {
+  width: 200px;
 }
+
 
 .form-all {
     background-color: #EDEDED;
     padding-top: 10px;
     padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
     border-radius: 15px;
     border-color:#d2d2d2;
     border-width: 5px;
@@ -47,35 +50,46 @@ h4 {
 
 }
 
-/* ABSOLUTE CENTER/RESPONSIVE FORM */
-.Absolute-Center {
-  margin: auto;
+input::placeholder {
+  text-align: center;
+  font-family: "Poppins", arial, sans-serif;
+}
+
+.button {
+  font-family: "Poppins", arial, sans-serif;
+  background-color: white;
+  border-radius: 25px;
+}
+
+
+
+/* /// LOGIN/SIGNUP POSITIONING STYLING ///*/
+#login-signup {
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
 }
-
-.Absolute-Center.is-Responsive {
-  width: 50%;
-  height: 50%;
-  min-width: 200px;
-  max-width: 400px;
-  padding: 40px;
-}
-
-
-/* ////////// INPUT STYLNIG //////////*/
-/* input[type=text] {
-  width: 100%
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-} */
 
 /* ///////STYLING FLASH MESSAGES ///////*/
 div.flash-message {
-  background-color: #66ff99;
+  background-color: #E3E3E3;
   padding-top: 10px;
   padding-bottom: 10px;
   position: fixed;
   text-align: center;
 }
+
+/* /////////  FOOTER ///////// */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #E3E3E3;
+  color: #595959;
+  text-align: center;
+}
+
+/* ///////// NAV BAR /////////*/
