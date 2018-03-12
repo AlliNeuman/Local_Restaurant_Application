@@ -121,7 +121,7 @@ li a:hover {
 /* INDEX, HOME & SHOW PAGE FORMATS */
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 100px;
   grid-gap: 10px;
   padding: 10px;
   justify-content: center;
@@ -149,8 +149,6 @@ div.form-all.grid-item.item-category {
   align-content: center;
 }
 
-
-
 .titles {
   text-align: center;
   text-transform: capitalize;
@@ -159,3 +157,11 @@ div.form-all.grid-item.item-category {
 #restaurant-link-name {
   text-decoration: none;
 }
+
+/*///// INDEX PAGE IMAGE SLIDER /////*/
+
+/* div#home-page > img.grid-item {
+  align-content: center;
+  width: 75px;
+  height: 75px;
+} */
