@@ -78,10 +78,4 @@ class UserController < ApplicationController
         redirect to '/'
       end
     end
-
-    post '/home' do
-      @bookmark = Bookmark.create(bookmark: params[:bookmark], restaurant_id: params[:restaurant_id], user_id: params[:user_id])
-      binding.pry
-      erb :'/users/show'
-    end
   end

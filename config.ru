@@ -6,6 +6,7 @@ end
 
 use Rack::MethodOverride
 
+use BookmarkController
 use RestaurantController
 use UserController
 run ApplicationController
