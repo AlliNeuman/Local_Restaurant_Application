@@ -3,9 +3,9 @@
 <br>
 <div>
 <% @creators.each do |creator| %>
-<div class="form-all wrapper">
+<div class="form-all">
 
-  <h3><a href="/users/<%=creator.id%>"><%=creator.username%></a></h3>
+  <h3><a href="/users/<%=creator.username%>"><%=creator.username%></a></h3>
   <br>
   <% creator.created_restaurants.each do |created_restaurant| %>
   <a href="/restaurants/<%=created_restaurant.id%>"><%=created_restaurant.name%></a></p>
