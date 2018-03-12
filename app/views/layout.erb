@@ -30,8 +30,10 @@
           <li><p>Welcome, <%= current_user.username %></p></li>
         </ul>
         <% else %>
-        <a href="/signup">Sign Up</a>
-        <a href="/login">Sign In</a>
+        <ul>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/login">Sign In</a></li>
+      </ul>
         <% end %>
       </div>
     <br>
