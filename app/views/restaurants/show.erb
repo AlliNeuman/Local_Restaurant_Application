@@ -35,18 +35,16 @@
 
     <% else %>
 
-    <form action="/home" method="post">
-      <input class="form-check-input" type="radio" name="bookmark" id="visited" value="visited">
-      <label class="form-check-label" for="been_there">Been There!</label>
+    <form action="/home" method="post" class="bookmark">
+      <input id="visited" type="radio" name="bookmark"  value="visited">Been There!</input>
 
       <br>
 
-      <input class="form-check-input" type="radio" name="bookmark" id="wish-list" value="wish-list">
-      <label class="form-check-label" for="wish_list">Still Need to Go!</label>
+      <input id="wish-list" type="radio" name="bookmark" value="wish-list">Still need to go</input>
 
       <br>
 
-      <input type="submit" name="bookmark" value="Bookmark">
+      <input type="submit" value="Bookmark">
 
     </form>
 

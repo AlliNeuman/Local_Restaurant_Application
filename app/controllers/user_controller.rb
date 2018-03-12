@@ -79,4 +79,8 @@ class UserController < ApplicationController
       end
     end
 
+    post '/home' do
+      binding.pry
+      @bookmark = Bookmark.create()
+    end
   end
