@@ -93,3 +93,12 @@ footer {
 }
 
 /* ///////// NAV BAR /////////*/
+
+
+
+/* //////////HOME VIEW////////// */
+div#home-view {
+  -webkit-columns: 100px 3;
+  -moz-columns: 100px 3;
+  columns: 100px 3;
+}

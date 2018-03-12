@@ -11,7 +11,12 @@ class UserController < ApplicationController
   # end
 
   get '/home' do
-    erb :'users/show'
+    if !logged_in?
+      redirect to '/'
+    else
+      @creator = User.find_by_id(session[:user_id])
+      erb :'users/show'
+    end
   end
 
   get '/signup' do
