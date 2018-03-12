@@ -158,10 +158,20 @@ div.form-all.grid-item.item-category {
   text-decoration: none;
 }
 
-/*///// INDEX PAGE IMAGE SLIDER /////*/
+/*///// INDEX PAGE IMAGE GALLERY GRID /////*/
+.grid-container#home-page {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+}
 
-/* div#home-page > img.grid-item {
-  align-content: center;
-  width: 75px;
-  height: 75px;
-} */
+.grid-item.home-img {
+  height: 175px;
+  width: 175px;
+  background-color: #EDEDED;
+  padding: 20px;
+  border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
+  box-shadow:0 1px 0 #cfcfcf;
+}
