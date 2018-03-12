@@ -14,16 +14,13 @@ body {
 }
 
 div.outer-div {
-  width: 200px;
+  width: auto;
 }
 
 
 .form-all {
     background-color: #EDEDED;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 20px;
     border-radius: 15px;
     border-color:#d2d2d2;
     border-width: 5px;
@@ -124,11 +121,35 @@ li a:hover {
 /* INDEX, HOME & SHOW PAGE FORMATS */
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 25px;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  padding: 10px;
   justify-content: center;
   align-content: start;
 }
+
+.grid-container > div {
+  text-align: center;
+
+}
+.grid-container > div.tips {
+  text-align: left;
+}
+
+div.form-all.grid-item.item-tips {
+  text-align: left;
+  grid-column: 1 / span 2;
+  grid-row: 2 / 3;
+}
+
+div.form-all.grid-item.item-neighborhood,
+div.form-all.grid-item.item-category {
+  width: 150px;
+  height: auto;
+  align-content: center;
+}
+
+
 
 .titles {
   text-align: center;

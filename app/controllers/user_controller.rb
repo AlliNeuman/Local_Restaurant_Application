@@ -59,9 +59,9 @@ class UserController < ApplicationController
     end
 
     post '/login' do
-      user = User.find_by(:username => params[:username])
-      if user && user.authenticate(params[:password])
-        session[:user_id] = user.id
+      @creator = User.find_by(:username => params[:username])
+      if @creator && @creator.authenticate(params[:password])
+        session[:user_id] = @creator.id
         erb :'users/show'
       else
         flash[:message] = "We couldn't find you. Click to sign up or check your username and password again."
