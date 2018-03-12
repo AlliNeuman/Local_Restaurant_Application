@@ -37,12 +37,11 @@
 
     <form action="/home" method="post" class="bookmark">
       <input id="visited" type="radio" name="bookmark"  value="visited">Been There!</input>
-
       <br>
-
       <input id="wish-list" type="radio" name="bookmark" value="wish-list">Still need to go</input>
-
       <br>
+      <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
+      <input type="hidden" name="user_id" value="<%=current_user.id%>">
 
       <input type="submit" value="Bookmark">
 
