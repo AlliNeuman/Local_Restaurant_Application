@@ -1,13 +1,15 @@
 <h1>Browse Restaurants</h1>
 
 <br>
-<div class="form-all index-page">
+<div class="index-page grid-container">
 <% @created_restaurants.each do |created_restaurant| %>
-<div>
-  <a href="/restaurants/<%=created_restaurant.id%>"><%=created_restaurant.name%></a>
-  <p><%=created_restaurant.category%>
+<div class="form-all grid-item">
+  <p><a href="/restaurants/<%=created_restaurant.id%>" id="restaurant-link-name"><%=created_restaurant.name%></a>
+<br>
+<%=created_restaurant.category%>
     <br>
   <%=created_restaurant.neighborhood%></p>
 </div>
+<br>
 <% end %>
 </div>

@@ -129,7 +129,7 @@ div#home-view {
   columns: 100px 3;
 }
 
-/* ////// RESTAURANT SHOW VIEW ////// */
+/* RESTAURANT SHOW VIEW & ALL RESTAURANTS */
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -141,4 +141,8 @@ div#home-view {
 div.titles {
   text-align: center;
   text-transform: capitalize;
+}
+
+#restaurant-link-name {
+  text-decoration: none;
 }
