@@ -12,7 +12,7 @@ class UserController < ApplicationController
 
   get '/home' do
     if !logged_in?
-      redirect to '/'
+      redirect to '/restaurants'
     else
       @creator = User.find_by_id(session[:user_id])
       erb :'users/show'
@@ -80,7 +80,8 @@ class UserController < ApplicationController
     end
 
     post '/home' do
+      @bookmark = Bookmark.create(bookmark: params[:bookmark], restaurant_id: params[:restaurant_id], user_id: params[:user_id])
       binding.pry
-      @bookmark = Bookmark.create()
+      erb :'/users/show'
     end
   end
