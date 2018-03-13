@@ -18,10 +18,9 @@
     <h3 class="titles">Insider Tips</h3>
     <p><%= @created_restaurant.tips %></p>
   </div>
+</div>
 
-
-
-
+<div class="edit-delete" id="edit-delete-restaurant-and-bookmark">
   <% if current_user == @created_restaurant.creator %>
   <div class="center">
 
@@ -35,7 +34,7 @@
       <input type="submit" class="button" name="edit" value="Edit Restaurant">
     </form>
 
-    <% else %>
+    <% elsif current_user.bookmarks.include?(@created_restaurant) %>
 
     <form action="/bookmarks" method="post" class="bookmark">
       <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
@@ -49,8 +48,28 @@
 
     </form>
 
+    <% else %>
+    Want to edit or delete your bookmark?
+    <form action="/bookmarks" method="post" class="bookmark">
+      <input id="hidden" type="hidden" name="_method" value="PATCH">
+      <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
+      <br>
+      <input id="wish-list" type="radio" name="visited" value="wish-list">Still Need To Go</input>
+      <br>
+      <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
+      <input type="hidden" name="user_id" value="<%=current_user.id%>">
+
+      <input type="submit" class="button" name="edit" value="Edit Bookmark">
+    </form>
+
+    <form action="/bookmarks" method="post" class="bookmark">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
+      <input type="hidden" name="user_id" value="<%=current_user.id%>">
+      <input type="submit" class="button" value="Delete Bookmark">
+    </form>
+
     <% end %>
 
 
-  </div>
 </div>

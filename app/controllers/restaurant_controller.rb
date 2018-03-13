@@ -19,6 +19,7 @@ class RestaurantController < ApplicationController
 
   get '/restaurants/:id' do
     if logged_in?
+      @bookmarks = Bookmark.find_by(user_id: params[:user_id])
       @created_restaurant = Restaurant.find_by(id: params[:id])
       erb :'restaurants/show'
     else
@@ -92,7 +93,7 @@ class RestaurantController < ApplicationController
       @created_restaurant = Restaurant.find_by_id(params[:id])
       if @created_restaurant && @created_restaurant.creator == current_user
         @created_restaurant.remove_creator_assocation
-        binding.pry
+
         flash[:message] = "You have successfully removed your restaurant from your home page."
         redirect to '/home'
       else

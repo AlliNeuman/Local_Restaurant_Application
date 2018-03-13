@@ -123,6 +123,10 @@ div#category.grid-item.restaurant-show {
   grid-row-end: 3;
 }
 
+#edit-delete-restaurant-and-bookmark {
+  text-align: center;
+}
+
 /* ////////// FORM STYLING //////////*/
 
 body {
