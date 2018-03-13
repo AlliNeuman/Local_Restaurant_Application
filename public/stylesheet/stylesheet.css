@@ -160,39 +160,47 @@ a.created-restaurant {
 /*///// CREATE NEW RESTAURANT /////*/
 .grid-container#new-restaurant {
     display: grid;
+    grid-column: auto;
     padding: 10px;
-    justify-content: center;
     align-content: start;
-    marin-top: 50px;
+    margin-top: 10px;
     background-color: #EDEDED;
     padding-top: 25px;
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 15px;
     border-radius: 15px;
     border-color:#d2d2d2;
     border-width: 5px;
     box-shadow:0 1px 0 #cfcfcf;
-    font-size: 18px;
+    min-width: 250px
+
 }
-div.grid-item#created-restaurant-name,
+/* div.grid-item#created-restaurant-name,
 div.grid-item#created-restaurant-neighborhood,
-div.grid-item#created-restaurant-street_address,
-div.grid-item#created-restaurant-category,
-div.grid-item#created-restaurant-tips {
+div.grid-item#created-restaurant-street_address, */
+div.grid-item-inputs {
   font-weight: normal;
   font-family: "Poppins", arial, sans-serif;
   text-align: center;
   justify-content: center;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  font-size: 16px;
   border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
+  font-weight: normal;
+  font-family: "Poppins", arial, sans-serif;
 
   }
 
 #new_restaurant {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
-
 }
+
 
 
 
@@ -227,6 +235,7 @@ h4 {
 
 .form-control {
     border-radius: 10px;
+    box-shadow:0 1px 0 #cfcfcf;
 
 }
 
