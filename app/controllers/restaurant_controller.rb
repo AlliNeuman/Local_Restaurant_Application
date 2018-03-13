@@ -91,9 +91,10 @@ class RestaurantController < ApplicationController
     if logged_in?
       @created_restaurant = Restaurant.find_by_id(params[:id])
       if @created_restaurant && @created_restaurant.creator == current_user
-        @created_restaurant.delete
-        flash[:message] = "You have successfully deleted your restaurant entry."
-        redirect to '/'
+        @created_restaurant.remove_creator_assocation
+        binding.pry
+        flash[:message] = "You have successfully removed your restaurant from your home page."
+        redirect to '/home'
       else
         flash.now[:notice] = "Sorry, you don't have authority to delete this restaurant entry."
       end

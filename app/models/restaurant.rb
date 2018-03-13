@@ -9,7 +9,10 @@ class Restaurant < ActiveRecord::Base
     @bookmark.restaurant_id = self.id
     @bookmark.user_id = self.user_id
     @bookmark.save
+  end
 
-
+  def remove_creator_assocation
+    self.creator = nil
+    self.save
   end
 end

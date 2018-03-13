@@ -30,7 +30,8 @@
       <input type="submit" class="button" value="Delete Restaurant">
     </form>
     <br>
-    <form method="get" class="buttons" id="edit-button" action="/restaurants/<%=@created_restaurant.id%>/edit">
+    <form method="get" id="edit-button" action="/restaurants/<%=@created_restaurant.id%>/edit">
+      <input id="hidden" type="hidden" name="_method" value="PATCH">
       <input type="submit" class="button" name="edit" value="Edit Restaurant">
     </form>
 
