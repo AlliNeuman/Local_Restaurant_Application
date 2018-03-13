@@ -47,11 +47,7 @@ class RestaurantController < ApplicationController
       else
         @created_restaurant = current_user.created_restaurants.build(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
         if @created_restaurant.save
-          @bookmark = current_user.bookmarks.new(visited: params[:visited])
-          @bookmark.restaurant_id = @created_restaurant.id
-          @bookmark.user_id = current_user.id
-          @bookmark.save
-
+          @created_restaurant.bookmark_saved_restaurant(params[:user_id], params[:visited])
           flash[:message] = "Your restaurant was successfully saved to the system and added to your bookmarks!"
           redirect to "/restaurants/#{@created_restaurant.id}"
         else

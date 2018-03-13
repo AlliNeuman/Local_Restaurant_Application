@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :restaurants, through: :bookmarks
 
   has_secure_password
+  validates_uniqueness_of :username
+  validates_uniqueness_of :email
 
   def slug
     username.downcase.gsub(" ","-")
