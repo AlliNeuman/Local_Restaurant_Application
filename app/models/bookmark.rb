@@ -2,4 +2,6 @@ class Bookmark < ActiveRecord::Base
   belongs_to :user
   belongs_to :restaurant
 
-end 
+  validates_uniqueness_of :user
+
+end
