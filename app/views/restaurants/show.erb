@@ -3,34 +3,35 @@
   <h3><%= @created_restaurant.street_address%></h3>
 </div>
 
-<div class="grid-container" id="restaurant-neighborhood">
-  <div class="grid-item restaurant-show">
+<div class="grid-container" id="restaurant-show">
+  <div class="grid-item restaurant-show" id="neighborhood">
     <h5>Neighborhood</h5>
     <p><%= @created_restaurant.neighborhood%></p>
   </div>
 
-  <div class="grid-item restaurant-show" id="restaurant-category">
+  <div class="grid-item restaurant-show" id="category">
     <h5>Category</h5>
     <p><%= @created_restaurant.category%></p>
   </div>
 
-  <div class="grid-item restaurant-show" id="restaurant-tips">
+  <div class="grid-item restaurant-show" id="tips">
     <h3 class="titles">Insider Tips</h3>
     <p><%= @created_restaurant.tips %></p>
-    <p>Added by: <%=@created_restaurant.creator.username%></p>
   </div>
 
 
-  <% if current_user == @created_restaurant.creator %>
-  <div class="form-all item-buttons">
 
-    <form method="post" class="buttons" id="delete-button" action="/restaurants/<%=@created_restaurant.id%>">
+
+  <% if current_user == @created_restaurant.creator %>
+  <div class="center">
+
+    <form method="post" id="delete-button" action="/restaurants/<%=@created_restaurant.id%>">
       <input id="hidden" type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete Restaurant">
+      <input type="submit" class="button" value="Delete Restaurant">
     </form>
     <br>
     <form method="get" class="buttons" id="edit-button" action="/restaurants/<%=@created_restaurant.id%>/edit">
-      <input type="submit" name="edit" value="Edit Restaurant">
+      <input type="submit" class="button" name="edit" value="Edit Restaurant">
     </form>
 
     <% else %>
@@ -43,7 +44,7 @@
       <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
       <input type="hidden" name="user_id" value="<%=current_user.id%>">
 
-      <input type="submit" class="buttons" value="Bookmark">
+      <input type="submit" class="button" value="Bookmark">
 
     </form>
 

@@ -16,6 +16,7 @@ body.bkgd-image {
   width: 175px;
   background-color: #EDEDED;
   padding: 20px;
+  margin: 20px;
   border-radius: 15px;
   border-color:#d2d2d2;
   border-width: 5px;
@@ -56,13 +57,18 @@ h4.login-signup {
 /*///// USER HOME PAGE SHOW VIEW /////*/
 .grid-container#home-view {
   display: grid;
+  grid-gap: 10px;
+  padding: 10px;
   grid-template-columns: auto auto auto auto;
   justify-content: center;
+  align-content: start;
+
 }
 
-.grid-item.created-restaurant {
+.grid-item.created-restaurant,
+.grid-item.restaurant {
   height: 20px;
-  width: auto;
+  width: 270px;
   background-color: #EDEDED;
   padding: 20px;
   border-radius: 15px;
@@ -74,22 +80,47 @@ h4.login-signup {
   text-transform: capitalize;
 }
 
+
 /* RESTAURANT SHOW PAGE  */
-.grid-container#index-page {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: center;
+.grid-container#restaurant-show {
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-content: start;
 }
 
 .grid-item.restaurant-show {
-  height: 175px;
-  width: 175px;
   background-color: #EDEDED;
-  padding: 20px;
+  padding: 15px;
   border-radius: 15px;
   border-color:#d2d2d2;
   border-width: 5px;
   box-shadow:0 1px 0 #cfcfcf;
+  text-decoration: none;
+  text-transform: capitalize;
+  justify-content: center;
+  align-content: start;
+}
+
+
+
+div#neighborhood.grid-item.restaurant-show,
+div#category.grid-item.restaurant-show {
+  padding: 25px;
+  text-align: center;
+  align-content: start;
+  line-height: 75%;
+  grid-column: 1;
+
+}
+
+.grid-container > div#tips {
+  text-align: left;
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 
 /* ////////// FORM STYLING //////////*/
@@ -196,41 +227,20 @@ li a:hover {
 }
 
 /* INDEX, HOME & SHOW PAGE FORMATS */
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-columns: 100px;
   grid-gap: 10px;
   padding: 10px;
   justify-content: center;
   align-content: start;
-}
-
-.grid-container > div {
-  text-align: center;
-
-}
-.grid-container > div.tips {
-  text-align: left;
-}
-
-div.form-all.grid-item.item-tips {
-  text-align: left;
-  grid-column: 1 / span 2;
-  grid-row: 2 / 3;
-}
-
-div.form-all.grid-item.item-neighborhood,
-div.form-all.grid-item.item-category {
-  width: 150px;
-  height: auto;
-  align-content: center;
-}
+} */
 
 .titles {
   text-align: center;
   text-transform: capitalize;
 }
 
-#restaurant-link-name {
-  text-decoration: none;
+.center {
+  text-align: center;
 }
