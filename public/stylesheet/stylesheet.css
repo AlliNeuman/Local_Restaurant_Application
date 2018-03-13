@@ -104,8 +104,6 @@ h4.login-signup {
   align-content: start;
 }
 
-
-
 div#neighborhood.grid-item.restaurant-show,
 div#category.grid-item.restaurant-show {
   padding: 25px;
@@ -113,7 +111,6 @@ div#category.grid-item.restaurant-show {
   align-content: start;
   line-height: 75%;
   grid-column: 1;
-
 }
 
 .grid-container > div#tips {
@@ -126,6 +123,39 @@ div#category.grid-item.restaurant-show {
 #edit-delete-restaurant-and-bookmark {
   text-align: center;
 }
+
+/* ///////// RESTAURANT ALL PAGE /////////*/
+div.index-page.grid-container#restaurant-index {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+div.grid-item.restaurant-index#created-restaurant {
+  height: 100px;
+  width: 270px;
+  background-color: #EDEDED;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
+  box-shadow:0 1px 0 #cfcfcf;
+  text-decoration: none;
+  text-transform: capitalize;
+  text-align: center;
+  justify-content: center;
+  align-content: start;
+  font-size: 16px;
+
+}
+
+a.created-restaurant {
+  text-decoration: none;
+}
+
 
 /* ////////// FORM STYLING //////////*/
 
@@ -222,23 +252,13 @@ li a {
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px;
   text-decoration: none;
 }
 
 li a:hover {
   background-color: white;
 }
-
-/* INDEX, HOME & SHOW PAGE FORMATS */
-/* .grid-container {
-  display: grid;
-  grid-template-columns: 100px;
-  grid-gap: 10px;
-  padding: 10px;
-  justify-content: center;
-  align-content: start;
-} */
 
 .titles {
   text-align: center;
@@ -247,4 +267,8 @@ li a:hover {
 
 .center {
   text-align: center;
+}
+
+.container {
+  padding: 75px;
 }

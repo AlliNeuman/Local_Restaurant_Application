@@ -1,14 +1,16 @@
-<h1 class="titles">Browse Restaurants</h1>
+<div class="titles">
+<h1>Browse Restaurants</h1>
+<h3>Select an individual restaurant to bookmark to your home page</h3>
+</div>
 
-<br>
-<div class="index-page grid-container">
+<div class="index-page grid-container" id="restaurant-index">
 <% @created_restaurants.each do |created_restaurant| %>
-<div class="form-all grid-item">
-  <p><a href="/restaurants/<%=created_restaurant.id%>" id="restaurant-link-name"><%=created_restaurant.name%></a>
-<br>
-<%=created_restaurant.category%>
+<div class="grid-item restaurant-index" id="created-restaurant">
+  <p><a href="/restaurants/<%=created_restaurant.id%>" class="created-restaurant"><%=created_restaurant.name%></a>
     <br>
-  <%=created_restaurant.neighborhood%></p>
+    <%=created_restaurant.category%>
+    <br>
+    <%=created_restaurant.neighborhood%></p>
 </div>
 <br>
 <% end %>
