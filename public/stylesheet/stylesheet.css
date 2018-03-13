@@ -2,7 +2,24 @@ body.bkgd-image {
   background: url('../images/marble.png');
   background-size: cover;
   background-attachment: fixed;
+}
 
+/*///// INDEX PAGE IMAGE GALLERY GRID /////*/
+.grid-container#index-page {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+}
+
+.grid-item.index-img {
+  height: 175px;
+  width: 175px;
+  background-color: #EDEDED;
+  padding: 20px;
+  border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
+  box-shadow:0 1px 0 #cfcfcf;
 }
 
 /*////// LOGIN & SIGN UP SCREEN //////*/
@@ -20,16 +37,59 @@ div.outer-div.form-all {
   font-size: 18px;
   font-weight: normal;
   font-family: "Poppins", arial, sans-serif;
-
-}
-
+  }
 
 h4.login-signup {
   border:0 solid #fff;
   border-bottom-width:2px;
   padding-bottom:10px;
   text-align: center;
+}
 
+#login-signup {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+}
+
+/*///// USER HOME PAGE SHOW VIEW /////*/
+.grid-container#home-view {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+}
+
+.grid-item.created-restaurant {
+  height: 20px;
+  width: auto;
+  background-color: #EDEDED;
+  padding: 20px;
+  border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
+  box-shadow:0 1px 0 #cfcfcf;
+  text-decoration: none;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* RESTAURANT SHOW PAGE  */
+.grid-container#index-page {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+}
+
+.grid-item.restaurant-show {
+  height: 175px;
+  width: 175px;
+  background-color: #EDEDED;
+  padding: 20px;
+  border-radius: 15px;
+  border-color:#d2d2d2;
+  border-width: 5px;
+  box-shadow:0 1px 0 #cfcfcf;
 }
 
 /* ////////// FORM STYLING //////////*/
@@ -83,16 +143,6 @@ input::placeholder {
   font-family: "Poppins", arial, sans-serif;
   background-color: white;
   border-radius: 25px;
-}
-
-
-
-/* /// LOGIN/SIGNUP POSITIONING STYLING ///*/
-#login-signup {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-
 }
 
 /* ///////STYLING FLASH MESSAGES ///////*/
@@ -183,22 +233,4 @@ div.form-all.grid-item.item-category {
 
 #restaurant-link-name {
   text-decoration: none;
-}
-
-/*///// INDEX PAGE IMAGE GALLERY GRID /////*/
-.grid-container#home-page {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: center;
-}
-
-.grid-item.home-img {
-  height: 175px;
-  width: 175px;
-  background-color: #EDEDED;
-  padding: 20px;
-  border-radius: 15px;
-  border-color:#d2d2d2;
-  border-width: 5px;
-  box-shadow:0 1px 0 #cfcfcf;
 }

@@ -1,15 +1,5 @@
 class UserController < ApplicationController
 
-  # get '/users' do
-  #   if logged_in?
-  #     @creators = User.all
-  #     erb :'users/index'
-  #   else
-  #     flash[:message] = "Please log in to view users."
-  #     redirect to '/login'
-  #   end
-  # end
-
   get '/home' do
     if !logged_in?
       redirect to '/restaurants'
@@ -23,7 +13,8 @@ class UserController < ApplicationController
     if !logged_in?
       erb :'users/create_user'
     else
-      erb :'users/show'
+      @user = current_user
+      redirect to '/home'
     end
   end
 
@@ -40,15 +31,6 @@ class UserController < ApplicationController
       end
     end
 
-    # get '/users/:slug' do
-    #   if logged_in?
-    #     @creator = User.find_by_slug(params[:slug])
-    #     erb :'users/show'
-    #   else
-    #     flash[:message] = "Please log in to view the user."
-    #     redirect to '/login'
-    #   end
-    # end
 
     get '/login' do
       if !logged_in?
@@ -62,7 +44,7 @@ class UserController < ApplicationController
       @creator = User.find_by(:username => params[:username])
       if @creator && @creator.authenticate(params[:password])
         session[:user_id] = @creator.id
-        erb :'users/show'
+        redirect to "/home"
       else
         flash[:message] = "We couldn't find you. Click to sign up or check your username and password again."
         redirect to "/signup"
