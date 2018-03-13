@@ -1,32 +1,35 @@
-<br>
-<div class="container text-center form-all" id="new_restaurant">
-          <h4>Add a Restaurant to the Database!</h4>
+<div class="titles">
+    <h2>Create a Restaurant</h2>
+    <h3>Make sure to fill out all fields.</h3>
+  </div>
 
-          <form action="/restaurants" id="new_restaurant" method="post">
-            <input type="text" name="name" class="form-control" placeholder="Restaurant Name">
-            <br>
-            <input type="text" name="neighborhood" class="form-control" placeholder="Neighborhood">
-            <br>
-            <input type="text" name="street_address" class="form-control" placeholder="Street Address">
-            <br>
-            <textarea name="category" class="form-control" form="new_restaurant" rows="2" cols="50" placeholder="Category (i.e. Chinese, Italian, Pub)"></textarea>
-            <label></label><br>
-            <textarea name="tips" class="form-control" form="new_restaurant" rows="4" cols="50" placeholder="Notes about what the restaurant is known for (i.e. amazing burrito, best wings, romantic night out)"></textarea>
-            <br>
-            <div class="bookmark">
-              <input id="visited" type="radio" name="visited" value="visited">Been There!</input>
-            <br>
-            <input id="wish-list" type="radio" name="visited" value="wish-list">Still Need To Go!</input>
-            <br>
-          </div>
-            <div class="wrapper">
-              <span class="col-7 text-right">
-                <input type="submit" class="buttons" value="submit">
-              </span>
-            </div>
+
+  <div class="grid-container outer-div form-all wrapper" id="new-restaurant">
+
+      <form action="/restaurants" id="new-restaurant" method="post">
+        <input type="text" name="name" class="grid-item" id="created-restaurant-name" placeholder="Restaurant Name">
+
+        <input type="text" name="neighborhood" class="grid-item" id="created-restaurant-neighborhood" placeholder="Neighborhood">
+
+        <input type="text" name="street_address" class="grid-item" id="created-restaurant-street_address" placeholder="Street Address">
+
+        <textarea name="category" class="grid-item" id="created-restaurant-category" form="new-restaurant" rows="2" cols="50" placeholder="Category (i.e. Chinese, Italian, Pub)"></textarea>
+
+        <textarea name="tips" class="grid-item" id="created-restaurant-tips" form="new-restaurant" rows="4" cols="50" placeholder="Notes about what the restaurant is known for (i.e. amazing burrito, best wings, romantic night out)"></textarea>
+
+        <div class="wrapper">
+          <div class="bookmark">
+            <input id="visited" type="radio" name="visited" value="visited">Been There!</input>
+
+            <input id="wish-list" type="radio" name="visited" value="wish-list" checked="checked">Still Need To Go!</input>
+
+            <input type="submit" class="button" value="submit">
           </form>
         </div>
       </div>
+
     </div>
+
   </div>
+
 </div>
