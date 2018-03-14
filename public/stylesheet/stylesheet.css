@@ -4,331 +4,35 @@ body.bkgd-image {
   background-attachment: fixed;
 }
 
-/*///// INDEX PAGE IMAGE GALLERY GRID /////*/
-.grid-container#index-page {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: center;
+* {
+  box-sizing: border-box;
 }
 
-.grid-item.index-img {
-  height: 175px;
-  width: 175px;
-  background-color: #EDEDED;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 15px;
-  border-color:#d2d2d2;
-  border-width: 5px;
-  box-shadow:0 1px 0 #cfcfcf;
-}
-
-/*////// LOGIN & SIGN UP SCREEN //////*/
-div.outer-div.form-all {
-  width: auto;
-  margin-top: 50px;
-  background-color: #EDEDED;
-  padding-top: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 15px;
-  border-color:#d2d2d2;
-  border-width: 5px;
-  box-shadow:0 1px 0 #cfcfcf;
-  font-size: 18px;
-  font-weight: normal;
-  font-family: "Poppins", arial, sans-serif;
-  }
-
-h4.login-signup {
-  border:0 solid #fff;
-  border-bottom-width:2px;
-  padding-bottom:10px;
-  text-align: center;
-}
-
-#login-signup {
-  position: absolute;
-  /* left: 50%; */
-  transform: translate(-50%, 0);
+/* RESPONSIVE FOR SMALLEST DEVICE */
+/*phones, 600px and down*/
+@media only screen and (max-width: 600px){
 
 }
 
-/*///// USER HOME PAGE SHOW VIEW /////*/
-.grid-container#home-view {
-  display: grid;
-  grid-gap: 10px;
-  padding: 10px;
-  grid-template-columns: auto auto auto auto;
-  justify-content: center;
-  align-content: start;
+/* RESPONSIVE FOR SMALL DEVICE */
+/*tablets and large phones */
+@media only screen and (min-width: 600px){
+
+}
+/*RESPONSIVE FOR MEDIUM DEVICES */
+@media only screen and (min-width: 768px){
 
 }
 
-.grid-item.created-restaurant,
-.grid-item.restaurant {
-  height: 20px;
-  width: 270px;
-  background-color: #EDEDED;
-  padding: 20px;
-  border-radius: 15px;
-  border-color:#d2d2d2;
-  border-width: 5px;
-  box-shadow:0 1px 0 #cfcfcf;
-  text-decoration: none;
-  text-align: center;
-  text-transform: capitalize;
-}
+/*RESPONSIVE FOR LARGE DEVICES */
+/*laptops and desktops*/
+@media only screen and (min-width: 992px){
 
-
-/* RESTAURANT SHOW PAGE  */
-.grid-container#restaurant-show {
-    display: grid;
-    grid-gap: 10px;
-    padding: 10px;
-    grid-template-columns: auto auto auto auto;
-    justify-content: center;
-    align-content: start;
-}
-
-.grid-item.restaurant-show {
-  background-color: #EDEDED;
-  padding: 15px;
-  border-radius: 15px;
-  border-color:#d2d2d2;
-  border-width: 5px;
-  box-shadow:0 1px 0 #cfcfcf;
-  text-decoration: none;
-  text-transform: capitalize;
-  justify-content: center;
-  align-content: start;
-}
-
-div#neighborhood.grid-item.restaurant-show,
-div#category.grid-item.restaurant-show {
-  padding: 25px;
-  text-align: center;
-  align-content: start;
-  line-height: 75%;
-  grid-column: 1;
-}
-
-.grid-container > div#tips {
-  text-align: left;
-  grid-column: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
-
-#edit-delete-restaurant-and-bookmark {
-  text-align: center;
-}
-
-/* ///////// RESTAURANT ALL PAGE /////////*/
-div.index-page.grid-container#restaurant-index {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: center;
-  grid-gap: 10px;
-  padding: 20px;
-}
-
-div.grid-item.restaurant-index#created-restaurant {
-  height: 100px;
-  width: 270px;
-  background-color: #EDEDED;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 15px;
-  border-color:#d2d2d2;
-  border-width: 5px;
-  box-shadow:0 1px 0 #cfcfcf;
-  text-decoration: none;
-  text-transform: capitalize;
-  text-align: center;
-  justify-content: center;
-  align-content: start;
-  font-size: 16px;
 
 }
 
-a.created-restaurant {
-  text-decoration: none;
-}
+/*RESPONSIVE FOR XL DEVICES */
+/*large laptops and desktops */
+@media only screen and (min-width: 1200px){
 
-
-/*///// CREATE NEW & EDIT RESTAURANT /////*/
-.grid-container#new-restaurant,
-.grid-container#edit-restaurant {
-    display: grid;
-    grid-column: auto;
-    padding: 10px;
-    align-content: start;
-    margin-top: 10px;
-    background-color: #EDEDED;
-    padding-top: 25px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    border-radius: 15px;
-    border-color:#d2d2d2;
-    border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf;
-    width: 400px;
-
-}
-
-
-
-div.grid-item-inputs {
-  font-weight: normal;
-  font-family: "Poppins", arial, sans-serif;
-  text-align: center;
-  justify-content: center;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  font-size: 16px;
-  border-radius: 15px;
-  border-color:#d2d2d2;
-  border-width: 5px;
-  font-weight: normal;
-  font-family: "Poppins", arial, sans-serif;
-
-
-  }
-
-#new_restaurant {
-  position: absolute;
-  /* left: 50%; */
-}
-
-
-
-
-/* ////////// FORM STYLING //////////*/
-
-body {
-  font-size: 16px;
-  font-weight: normal;
-  font-family: "Poppins", arial, sans-serif;
-}
-
-div.outer-div {
-  width: auto;
-}
-
-
-.form-all {
-    background-color: #EDEDED;
-    padding: 20px;
-    border-radius: 15px;
-    border-color:#d2d2d2;
-    border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf;
-}
-
-h4 {
- border:0 solid #fff;
- border-bottom-width:1px;
- padding-bottom:10px;
- text-align: center;
-}
-
-.form-control {
-    border-radius: 10px;
-    box-shadow:0 1px 0 #cfcfcf;
-
-}
-
-.wrapper {
-    text-align: center;
-}
-
-.index-page {
-  opacity: 0.75;
-
-}
-
-input::placeholder {
-  text-align: center;
-  font-family: "Poppins", arial, sans-serif;
-}
-
-.button {
-  font-family: "Poppins", arial, sans-serif;
-  background-color: white;
-  border-radius: 25px;
-}
-
-/* ///////STYLING FLASH MESSAGES ///////*/
-.flash-message.titles {
-  padding: 15px;
-  border: 2px;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  position: fixed;
-  text-align: center;
-}
-
-/* /////////  FOOTER ///////// */
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #E3E3E3;
-  color: #595959;
-  text-align: center;
-}
-
-/* ///////// NAV BAR /////////*/
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #f2f2f2;
-  top: 0;
-  width: 100%;
-  border: 1px solid #e7e7e7;
-  position: fixed;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 10px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: white;
-}
-
-.titles {
-  text-align: center;
-  text-transform: capitalize;
-}
-
-.center {
-  text-align: center;
-}
-
-.container {
-  width: 720px;
-  justify-content: center;
-  position: absolute;
-  left: 50%;
-
-}
-
-body {
-  padding: 75px;
 }
