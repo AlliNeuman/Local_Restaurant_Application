@@ -42,7 +42,7 @@ class RestaurantController < ApplicationController
 
   post '/restaurants' do
     if logged_in?
-      if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
+      if restaurant_params_blank?
         flash[:message] = "Make sure to fill out all fields."
         redirect to "/restaurants/new"
       else
@@ -63,8 +63,7 @@ class RestaurantController < ApplicationController
 
   patch '/restaurants/:id' do
     if logged_in?
-      if params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
-
+      if restaurant_params_blank?
         flash[:message] = "Please input information to all fields."
         redirect to "/restaurants/#{params[:id]}/edit"
       else
@@ -74,7 +73,7 @@ class RestaurantController < ApplicationController
             flash[:message] = "You have successfully edited your restaurant entry."
             redirect to "/restaurants/#{@created_restaurant.id}"
           else
-            flash[:message] = "Do you want to save your edits?"
+            flash[:message] = "Did you want to edit your restaurant?"
             redirect to "/restaurants/#{@created_restaurant.id}/edit"
           end
         else
@@ -88,7 +87,7 @@ class RestaurantController < ApplicationController
     end
   end
 
-  delete '/restaurants/:id' do
+  delete '/restaurants/:id' do  #This is not a true "delete", it removes the creator association if the creator doesn't want it anymore
     if logged_in?
       @created_restaurant = Restaurant.find_by_id(params[:id])
       if @created_restaurant && @created_restaurant.creator == current_user
