@@ -12,14 +12,11 @@ body.bkgd-image {
 /*phones, 600px and down*/
 @media only screen and (max-width: 600px){
 
-  /* .container {
-    padding-top: 75px;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    width: 600px;
+  .container {
+    padding-top: 40px;
 
-  } */
+
+  }
 
   /*///// INDEX PAGE IMAGE GALLERY GRID /////*/
   .grid-container#index-page {
@@ -334,6 +331,8 @@ body.bkgd-image {
   li a:hover {
     background-color: white;
   }
+
+
 
   .titles {
     text-align: center;
