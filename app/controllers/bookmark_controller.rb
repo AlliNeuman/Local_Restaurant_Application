@@ -16,4 +16,30 @@ class BookmarkController < ApplicationController
       redirect to '/login'
     end
   end
+
+  patch '/bookmarks/:id' do
+    if logged_in?
+      @bookmark = Bookmark.find_by_id(params[:id])
+      if @bookmark && @bookmark.user_id == current_user
+        if @bookmark.update(visited: params[:visited], restaurant_id: params[:restaurant_id], user_id: params[:user_id])
+          flash[:message] = "You have successfully edited your bookmark entry."
+          redirect to "/home"
+        else
+          flash[:message] = "Did you want to edit your bookmark?"
+          redirect to "/restaurants/#{@bookmark.restaurant_id}"
+        end
+      else
+        flash[:message] = "Sorry you can only edit your own bookmarks."
+        redirect to "/home"
+      end
+    else
+      flash[:message] = "Please login before continuing."
+      redirect to '/login'
+    end
+  end
+
+  delete '/bookmarks/:id' do
+
+  end
+
 end

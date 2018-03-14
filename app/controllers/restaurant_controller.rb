@@ -19,7 +19,7 @@ class RestaurantController < ApplicationController
 
   get '/restaurants/:id' do
     if logged_in?
-      @bookmarks = Bookmark.find_by(user_id: params[:user_id])
+      @bookmark = Bookmark.find_by(user_id: params[:user_id])
       @created_restaurant = Restaurant.find_by(id: params[:id])
       erb :'restaurants/show'
     else
