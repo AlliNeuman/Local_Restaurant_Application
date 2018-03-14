@@ -25,11 +25,11 @@ class ApplicationController < Sinatra::Base
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 
-    def user_params_blank?(params)
+    def user_params_blank?
       params[:username] == "" || params[:email] == "" || params[:password] == "" || params[:username] == nil || params[:email] == nil || params[:password] == nil
     end
 
-    def restaurant_params_blank?(params)
+    def restaurant_params_blank?
       params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == "" || params[:name] == nil || params[:street_address] == nil || params[:neighborhood] == nil || params[:category] == nil || params[:tips] == nil
     end
 
