@@ -105,7 +105,7 @@ body.bkgd-image {
       display: grid;
       grid-gap: 10px;
       padding: 10px;
-      grid-template-columns: auto auto auto auto;
+      grid-template-columns: auto;
       justify-content: center;
       align-content: start;
   }
@@ -324,8 +324,9 @@ body.bkgd-image {
     display: block;
     color: black;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     text-decoration: none;
+    font-size:
   }
 
   li a:hover {

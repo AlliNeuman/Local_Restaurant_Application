@@ -20,54 +20,54 @@
   </div>
 </div>
 
-<div class="edit-delete" id="edit-delete-restaurant-and-bookmark">
+<div class="edit-delete center" id="edit-delete-restaurant-and-bookmark">
+
   <% if current_user == @created_restaurant.creator %>
-  <div class="center">
+  <form method="post" id="delete-button" action="/restaurants/<%=@created_restaurant.id%>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" class="button" value="Delete Restaurant">
+  </form>
+  <br>
+  <form method="get" id="edit-button" action="/restaurants/<%=@created_restaurant.id%>/edit">
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+    <input type="submit" class="button" name="edit" value="Edit Restaurant">
+  </form>
 
-    <form method="post" id="delete-button" action="/restaurants/<%=@created_restaurant.id%>">
-      <input id="hidden" type="hidden" name="_method" value="DELETE">
-      <input type="submit" class="button" value="Delete Restaurant">
-    </form>
+  <% elsif current_user.bookmarks.include?(Bookmark.find_by(restaurant_id: @created_restaurant.id)) %>
+  <% @bookmark = current_user.bookmarks.find_by(restaurant_id: @created_restaurant.id)%>
+  Want to edit or delete your bookmark?
+
+  <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+    <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
     <br>
-    <form method="get" id="edit-button" action="/restaurants/<%=@created_restaurant.id%>/edit">
-      <input id="hidden" type="hidden" name="_method" value="PATCH">
-      <input type="submit" class="button" name="edit" value="Edit Restaurant">
-    </form>
+    <input id="wish-list" type="radio" name="visited" value="wish-list">Still Need To Go</input>
+    <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
+    <input type="hidden" name="user_id" value="<%=current_user.id%>">
+    <br>
+    <input type="submit" class="button" name="edit" value="Edit Bookmark">
+  </form>
 
-    <% elsif current_user.bookmarks.include?(@created_restaurant.restaurant_id) %>
+  <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
+    <input type="hidden" name="user_id" value="<%=current_user.id%>">
+    <input type="submit" class="button" value="Delete Bookmark">
+  </form>
 
-    Want to edit or delete your bookmark?
-    <form action="/bookmarks<%=@bookmark.id%>" method="post" class="bookmark">
-      <input id="hidden" type="hidden" name="_method" value="PATCH">
-      <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
-      <br>
-      <input id="wish-list" type="radio" name="visited" value="wish-list">Still Need To Go</input>
-      <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
-      <input type="hidden" name="user_id" value="<%=current_user.id%>">
-      <br>
-      <input type="submit" class="button" name="edit" value="Edit Bookmark">
-    </form>
+  <% else %>
+  <form action="/bookmarks" method="post" class="bookmark">
+    <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
+    <br>
+    <input id="wish-list" type="radio" name="visited" value="wish-list" checked="checked">Still Need To Go</input>
+    <br>
+    <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
+    <input type="hidden" name="user_id" value="<%=current_user.id%>">
 
-    <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">
-      <input id="hidden" type="hidden" name="_method" value="DELETE">
-      <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
-      <input type="hidden" name="user_id" value="<%=current_user.id%>">
-      <input type="submit" class="button" value="Delete Bookmark">
-    </form>
+    <input type="submit" class="button" value="Bookmark">
 
-    <% else %>
-    <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">
-      <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
-      <br>
-      <input id="wish-list" type="radio" name="visited" value="wish-list" checked="checked">Still Need To Go</input>
-      <br>
-      <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
-      <input type="hidden" name="user_id" value="<%=current_user.id%>">
-
-      <input type="submit" class="button" value="Bookmark">
-
-    </form>
-    <% end %>
+  </form>
+  <% end %>
 
 
 </div>
