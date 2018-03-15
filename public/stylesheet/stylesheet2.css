@@ -1,4 +1,10 @@
-
+<!-- <div class="flash-message">
+<% if flash.has?(:message)%>
+<%= flash[:message]%>
+<% flash[:message]%>
+<% flash[:message] = nil %>
+<% end %>
+</div> -->
 
 /* RESPONSIVE FOR DESKTOP */
 

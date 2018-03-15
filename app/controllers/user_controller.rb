@@ -20,13 +20,11 @@ class UserController < ApplicationController
 
     post '/signup' do
       if user_params_blank?
-        flash[:message] = "Please fill out all fields."
         redirect to '/signup'
       else
         @creator = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
         @creator.save
         session[:user_id] = @creator.id
-        flash[:message] = "You have successfully created an account!"
         redirect to '/restaurants'
       end
     end

@@ -17,32 +17,33 @@
 </head>
 <body class="bkgd-image">
   <div class="container">
-      <div id="nav">
-
-        <% if logged_in? %>
-        <ul>
-          <li><a href="/home">Home</a></li>
-          <li><a href="/restaurants">Restaurants</a></li>
-          <li><a href="/restaurants/new">Create Restaurant</a></li>
-          <li><a href="/logout">Log Out</a></li>
-          <li><p>Welcome, <%= current_user.username %></p></li>
-          <li>      <p class="titles flash-message">
-                  <% if flash.has?(:message)%>
-                  <%= flash[:message]%>
-                  <% flash[:message] = nil %>
-                  <%end%>
-                </p></li>
-        </ul>
-        <% else %>
-        <ul>
+    <div id="nav">
+      <% if logged_in? %>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/restaurants">Restaurants</a></li>
+        <li><a href="/restaurants/new">Create Restaurant</a></li>
+        <li><a href="/logout">Log Out</a></li>
+        <li><p class="welcome-user">Welcome, <%= current_user.username %></p></li>
+      </ul>
+      <% else %>
+      <ul>
         <li><a href="/signup">Sign Up</a></li>
         <li><a href="/login">Sign In</a></li>
       </ul>
-        <% end %>
-      </div>
-
-      <%= yield %>
-
+      <% end %>
     </div>
-  </body>
-  </html>
+
+    <div class="flash-message">
+    <% if flash.has?(:message)%>
+      <%= flash[:message]%>
+      <% flash[:message]%>
+      <% flash[:message] = nil %>
+      <% end %>
+    </div>
+
+    <%= yield %>
+
+  </div>
+</body>
+</html>
