@@ -1,11 +1,11 @@
-<div class="outer-div">
-  <div class="titles">
+<div class="outer-div" id="user-home">
+  <div class="titles center">
     <h1><%= @creator.username%>'s Restaurants</h1>
   </div>
-  <div id="home-view">
+  <div id="home-view" class="center">
     <h3>Created Restaurants</h3>
     <% current_user.created_restaurants.each do |created_restaurant| %>
-    <a href="/restaurants/<%=created_restaurant.id%>" class="wrapper"><%=created_restaurant.name%></a>
+    <a href="/restaurants/<%=created_restaurant.id%>" class="wrapper col-8"><%=created_restaurant.name%></a>
     <br>
     <%end%>
 
@@ -15,7 +15,7 @@
 
     <% current_user.restaurants.each do |restaurant| %>
     <% if current_user != restaurant.creator %>
-    <a href="/restaurants/<%=restaurant.id%>" class="wrapper"><%=restaurant.name%></a>
+    <a href="/restaurants/<%=restaurant.id%>" class="wrapper col-8"><%=restaurant.name%></a>
     <br>
     <%end%>
     <%end%>

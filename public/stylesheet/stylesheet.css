@@ -39,9 +39,8 @@ body {
 [class*="col-"]{
   float: left;
   padding: 15px;
-  border: 3px solid white;
-}
 
+}
 
 .titles {
   text-transform: capitalize;
@@ -170,6 +169,14 @@ footer {
 
 /* INDEX */
 
+.wrapper {
+  padding: 10px;
+
+}
+
+div#nav ul li a {
+  font-size: 16px;
+}
 
 /* RESTAURANT EDIT & NEW */
 
@@ -179,8 +186,29 @@ footer {
 /* RESTAURANT SHOW */
 
 /* USER CREATE & LOGIN */
+div.wrapper.col-8 {
+  margin-top: 75px;
+  padding-bottom: 20px;
+}
+
+p.requirements {
+  font-size: 12px;
+}
 
 /* USER SHOW */
+
+div#home-view a.wrapper {
+  width: 75%;
+  text-align: center;
+  justify-content: center;
+  margin: 10px;
+
+
+}
+
+div#user-home.outer-div{
+
+}
 
 }
 
