@@ -1,16 +1,18 @@
-<div id="login-signup">
-  <div class="outer-div">
-    <div class="wrapper col-8">
-      <h4 class="login-signup">Log In</h4>
-      <form action="/login" method="post">
-        <input type="text" id="userName" class="form-control" name="username" placeholder="username">
-        <p class="requirements">Username is case sensitive.</p>
-        <br>
-        <input type="password" id="userPassword" class="form-control" name="password" placeholder="password">
-        <p class="requirements">Password is case sensitive.</p>
-        <br>
-        <input type="submit" class="button" value="submit">
-      </form>
-    </div>
-  </div>
+
+<div class="outer-div" id="login-signup">
+
+
+  <section class="wrapper col-8 clear-fix">
+    <h4 class="login-signup">Log In</h4>
+    <form action="/login" method="post">
+      <input type="text" id="userName" class="form-control" name="username" placeholder="username" required>
+      <p class="requirements">Username is case sensitive.</p>
+      <br>
+      <input type="password" id="userPassword" class="form-control" name="password" placeholder="password">
+      <p class="requirements">Password is case sensitive.</p>
+      <br>
+      <input type="submit" class="button" value="submit">
+    </form>
+  </section>
+
 </div>

@@ -16,23 +16,24 @@
 
 </head>
 <body class="bkgd-image">
-  <div class="container">
-    <div id="nav">
+
+    <div class="nav">
       <% if logged_in? %>
-      <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/restaurants">Restaurants</a></li>
-        <li><a href="/restaurants/new">Create Restaurant</a></li>
-        <li><a href="/logout">Log Out</a></li>
-        <li><p class="welcome-user">Welcome, <%= current_user.username %></p></li>
-      </ul>
+        <a href="/home">Home</a>
+        <a href="/restaurants">Restaurants</a>
+        <a href="/restaurants/new">Create Restaurant</a>
+        <a href="/logout">Log Out</a>
+        <p class="welcome-user">Welcome, <%= current_user.username %></p>
+
       <% else %>
-      <ul>
-        <li><a href="/signup">Sign Up</a></li>
-        <li><a href="/login">Log In</a></li>
-      </ul>
+
+        <a href="/signup">Sign Up</a>
+        <a href="/login">Log In</a>
+
       <% end %>
     </div>
+
+    <div class="container">
 
     <div class="flash-message">
     <% if flash.has?(:message)%>
@@ -44,6 +45,9 @@
 
     <%= yield %>
 
+  </div>
+  <div class="footer">
+    Made with &hearts; by TheNeuMama
   </div>
 </body>
 </html>
