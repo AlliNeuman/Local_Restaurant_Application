@@ -1,23 +1,26 @@
-<div class="outer-div">
-  <div class="center titles" id="restaurant-show">
-    <h1><%= @created_restaurant.name %></h1>
-    <h3><%= @created_restaurant.street_address%></h3>
-  </div>
-  <div class="wrapper restaurant-show">
+<div class="outer-div" id="restaurant-show">
+
+  <h1 id="restaurant-name-title"><%= @created_restaurant.name %></h1>
+  <h3 id="restaurant-address-title"><%= @created_restaurant.street_address%></h3>
+
+  <div class="wrapper" id="restaurant-details">
+
     <div class="col-3" id="neighborhood">
-      <h5>Neighborhood</h5>
+      <h4>Neighborhood</h4>
       <p><%= @created_restaurant.neighborhood%></p>
     </div>
 
+    <div class="col-3" id="category">
+      <h4>Category</h4>
+      <p><%= @created_restaurant.category%></p>
+    </div>
+
     <div class="col-9" id="tips">
-      <h3 class="titles">Insider Tips</h3>
+      <h4 class="titles">Insider Tips</h4>
       <p><%= @created_restaurant.tips %></p>
     </div>
 
-    <div class="col-3" id="category">
-      <h5>Category</h5>
-      <p><%= @created_restaurant.category%></p>
-    </div>
+</div>
 
     <div class="col-3" id="user-restaurant-functionality">
 

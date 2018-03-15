@@ -147,7 +147,7 @@ p.welcome-user {
   background-color: #E3E3E3;
   color: #595959;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
   overflow: hidden;
 }
 
@@ -158,8 +158,9 @@ p.welcome-user {
   margin: 15px;
   border: 2px;
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 12px;
   text-align: center;
+
 }
 
 
@@ -175,11 +176,6 @@ p.welcome-user {
 
 div#index-page >img.wrapper {
   padding: 10px;
-
-}
-
-div#nav ul li a {
-  font-size: 16px;
 }
 
 /* RESTAURANT EDIT & NEW */
@@ -188,6 +184,39 @@ div#nav ul li a {
 /* RESTAURANT INDEX */
 
 /* RESTAURANT SHOW */
+
+div#restaurant-show.outer-div {
+    margin-top: 80px;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  #restaurant-name-title{
+    padding-top: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid black;
+    line-height: 200%;
+    text-transform: capitalize;
+
+  }
+  #restaurant-address-title{
+    text-transform: capitalize;
+  }
+
+  #neighborhood, #category {
+    text-transform: capitalize;
+    line-height: 75%;
+    width: 50%;
+  }
+
+#user-restaurant-functionality {
+  margin-bottom: 20%;
+}
+
+
+
 
 /* USER CREATE & LOGIN */
 div.wrapper.col-8 {
@@ -221,10 +250,8 @@ p.requirements {
 
 a.wrapper {
   display:block;
-  padding
   margin-top: 10px;
   margin-bottom: 10px;
-
 }
 
 h1.home-title {
@@ -237,7 +264,6 @@ h1.home-title {
   text-align: center;
   padding-top: 20px;
   margin-top: 20px;
-  z-index: 1;
   border-bottom: 1px solid black;
 
 }
@@ -247,7 +273,6 @@ padding-top: 20px;
 margin-top: 20px;
 line-height: 3em;
 vertical-align: text-bottom;
-z-index: 1;
 border-bottom: 1px solid black;
 }
 
