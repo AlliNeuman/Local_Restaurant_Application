@@ -63,6 +63,7 @@ div.container {
   border-width: 5px;
   box-shadow:0 1px 0 #cfcfcf;
   text-align: center;
+  width: 100%;
 }
 
 .button {
@@ -174,18 +175,22 @@ p.welcome-user {
 
 /* INDEX */
 
-div#index-page >img.wrapper {
+div#index-page > img {
   padding: 10px;
+
 }
+
+
+
 
 /* RESTAURANT EDIT & NEW */
 
 
-/* RESTAURANT INDEX */
 
-/* RESTAURANT SHOW */
+/* RESTAURANT SHOW & INDEX */
 
-div#restaurant-show.outer-div {
+div#restaurant-show.outer-div,
+div#restaurant-index.outer-div {
     margin-top: 80px;
     padding-right: 5%;
     padding-left: 5%;
@@ -193,7 +198,8 @@ div#restaurant-show.outer-div {
     text-align: center;
   }
 
-  #restaurant-name-title{
+  #restaurant-name-title,
+  #restaurant-index-title{
     padding-top: 20px;
     margin-top: 20px;
     border-bottom: 1px solid black;
@@ -201,6 +207,28 @@ div#restaurant-show.outer-div {
     text-transform: capitalize;
 
   }
+
+  a#restaurant-link {
+
+    text-transform: capitalize;
+    font-weight: bold;
+    width: 50%;
+    vertical-align: center;
+  }
+
+div#created-restaurant.wrapper {
+  padding: 10px;
+  line-height: 75%;
+  margin: 10px;
+  text-align: center;
+  height: auto;
+  text-transform: capitalize;
+  justify-content: center;
+
+
+
+}
+
   #restaurant-address-title{
     text-transform: capitalize;
   }
@@ -276,9 +304,10 @@ vertical-align: text-bottom;
 border-bottom: 1px solid black;
 }
 
+
+
+
 }
-
-
 
 
 /* RESPONSIVE FOR SMALL DEVICE */

@@ -1,20 +1,19 @@
-<div class="outer-div">
+<div class="outer-div" id="restaurant-index">
 
-  <div class="titles">
-    <h1>Browse Restaurants</h1>
-    <h3>Select an individual restaurant to bookmark to your home page</h3>
-  </div>
+  <h1 id="restaurant-index-title">Browse Restaurants</h1>
+  <h3 id="restaurant-index-directions">Select an individual restaurant to bookmark to your home page</h3>
 
-  <div id="restaurant-index">
-  <% @created_restaurants.each do |created_restaurant| %>
-  <div class="wrapper" id="created-restaurant">
-    <p><a href="/restaurants/<%=created_restaurant.id%>" class="created-restaurant"><%=created_restaurant.name%></a>
-      <br>
-      <%=created_restaurant.category%>
-      <br>
-      <%=created_restaurant.neighborhood%></p>
+  <div id="restaurants">
+
+    <% @created_restaurants.each do |created_restaurant| %>
+
+    <div class="wrapper col-6" id="created-restaurant">
+      <a href="/restaurants/<%=created_restaurant.id%>" id="restaurant-link"><%=created_restaurant.name%></a>
+      <p id="index-details"><%=created_restaurant.category%><p>
+      <p><%=created_restaurant.neighborhood%></p>
+
+      </div>
+
+      <% end %>
     </div>
-    <br>
-    <% end %>
   </div>
-</div>
