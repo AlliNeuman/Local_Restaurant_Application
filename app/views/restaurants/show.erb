@@ -1,71 +1,73 @@
-<div class="center titles" id="restaurant-show">
-  <h1><%= @created_restaurant.name %></h1>
-  <h3><%= @created_restaurant.street_address%></h3>
-</div>
-<div class="wrapper">
-  <div class="col-3 restaurant-show" id="neighborhood">
-    <h5>Neighborhood</h5>
-    <p><%= @created_restaurant.neighborhood%></p>
+<div class="outer-div">
+  <div class="center titles" id="restaurant-show">
+    <h1><%= @created_restaurant.name %></h1>
+    <h3><%= @created_restaurant.street_address%></h3>
   </div>
+  <div class="wrapper restaurant-show">
+    <div class="col-3" id="neighborhood">
+      <h5>Neighborhood</h5>
+      <p><%= @created_restaurant.neighborhood%></p>
+    </div>
 
-  <div class="col-9 restaurant-show" id="tips">
-    <h3 class="titles">Insider Tips</h3>
-    <p><%= @created_restaurant.tips %></p>
+    <div class="col-9" id="tips">
+      <h3 class="titles">Insider Tips</h3>
+      <p><%= @created_restaurant.tips %></p>
+    </div>
+
+    <div class="col-3" id="category">
+      <h5>Category</h5>
+      <p><%= @created_restaurant.category%></p>
+    </div>
+
+    <div class="col-3" id="user-restaurant-functionality">
+
+      <% if current_user == @created_restaurant.creator %>
+      <form method="post" id="delete-button" action="/restaurants/<%=@created_restaurant.id%>">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="button" value="Delete Restaurant">
+      </form>
+      <br>
+      <form method="get" id="edit-button" action="/restaurants/<%=@created_restaurant.id%>/edit">
+        <input id="hidden" type="hidden" name="_method" value="PATCH">
+        <input type="submit" class="button" name="edit" value="Edit Restaurant">
+      </form>
+
+      <% elsif current_user.bookmarks.include?(Bookmark.find_by(restaurant_id: @created_restaurant.id)) %>
+      <% @bookmark = current_user.bookmarks.find_by(restaurant_id: @created_restaurant.id)%>
+
+      <p>Want to edit or delete your bookmark?</p>
+
+      <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">
+        <input id="hidden" type="hidden" name="_method" value="PATCH">
+        <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
+        <br>
+        <input id="wish-list" type="radio" name="visited" value="wish-list">Still Need To Go</input>
+        <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
+        <input type="hidden" name="user_id" value="<%=current_user.id%>">
+        <br>
+        <input type="submit" class="button" name="edit" value="Edit Bookmark">
+      </form>
+
+      <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
+        <input type="hidden" name="user_id" value="<%=current_user.id%>">
+        <input type="submit" class="button" value="Delete Bookmark">
+      </form>
+
+      <% else %>
+      <form action="/bookmarks" method="post" class="bookmark">
+        <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
+        <br>
+        <input id="wish-list" type="radio" name="visited" value="wish-list" checked="checked">Still Need To Go</input>
+        <br>
+        <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
+        <input type="hidden" name="user_id" value="<%=current_user.id%>">
+
+        <input type="submit" class="button" value="Bookmark">
+
+      </form>
+      <% end %>
+    </div>
   </div>
-
-  <div class="col-3 restaurant-show" id="category">
-    <h5>Category</h5>
-    <p><%= @created_restaurant.category%></p>
-  </div>
-
-<div class="col-3">
-
-  <% if current_user == @created_restaurant.creator %>
-  <form method="post" id="delete-button" action="/restaurants/<%=@created_restaurant.id%>">
-    <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" class="button" value="Delete Restaurant">
-  </form>
-  <br>
-  <form method="get" id="edit-button" action="/restaurants/<%=@created_restaurant.id%>/edit">
-    <input id="hidden" type="hidden" name="_method" value="PATCH">
-    <input type="submit" class="button" name="edit" value="Edit Restaurant">
-  </form>
-
-  <% elsif current_user.bookmarks.include?(Bookmark.find_by(restaurant_id: @created_restaurant.id)) %>
-  <% @bookmark = current_user.bookmarks.find_by(restaurant_id: @created_restaurant.id)%>
-  Want to edit or delete your bookmark?
-
-  <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">
-    <input id="hidden" type="hidden" name="_method" value="PATCH">
-    <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
-    <br>
-    <input id="wish-list" type="radio" name="visited" value="wish-list">Still Need To Go</input>
-    <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
-    <input type="hidden" name="user_id" value="<%=current_user.id%>">
-    <br>
-    <input type="submit" class="button" name="edit" value="Edit Bookmark">
-  </form>
-
-  <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">
-    <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
-    <input type="hidden" name="user_id" value="<%=current_user.id%>">
-    <input type="submit" class="button" value="Delete Bookmark">
-  </form>
-
-  <% else %>
-  <form action="/bookmarks" method="post" class="bookmark">
-    <input id="visited" type="radio" name="visited"  value="visited">Been There!</input>
-    <br>
-    <input id="wish-list" type="radio" name="visited" value="wish-list" checked="checked">Still Need To Go</input>
-    <br>
-    <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
-    <input type="hidden" name="user_id" value="<%=current_user.id%>">
-
-    <input type="submit" class="button" value="Bookmark">
-
-  </form>
-  <% end %>
-
-
 </div>

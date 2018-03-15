@@ -1,10 +1,10 @@
-<div class="grid-container outer-div form-all wrapper" id="new-restaurant">
+<div class="outer-div wrapper" id="new-restaurant">
   <div class="titles">
     <h2>Create a Restaurant</h2>
     <p>Make sure to fill out all fields.</p>
   </div>
   <form action="/restaurants" id="new-restaurant" method="post">
-    <div class="grid-item-inputs">
+    <div class="form-input">
       <input type="text" name="name" class="form-control" id="created-restaurant-name" placeholder="Restaurant Name">
       <br>
       <input type="text" name="neighborhood" class="form-control" id="created-restaurant-neighborhood" placeholder="Neighborhood">
@@ -16,12 +16,12 @@
       <textarea name="tips" class="form-control" id="created-restaurant-tips" form="new-restaurant" rows="5" cols="30" placeholder="Notes about what the restaurant is known for (i.e. amazing burrito, best wings, romantic night out)"></textarea>
       <br>
       <input id="visited" type="radio" name="visited" value="visited">Been There!</input>
-      
+
       <input id="wish-list" type="radio" name="visited" value="wish-list" checked="checked">Still Need To Go!</input>
-      
+
       <input type="submit" class="button" value="submit">
     </div>
-    
-    
+
+
   </form>
 </div>

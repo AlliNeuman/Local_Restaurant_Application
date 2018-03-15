@@ -1,22 +1,23 @@
-<div class="titles">
-<h1><%= @creator.username.capitalize %>'s Restaurants</h1>
-<h3>Created Restaurants</h3>
-</div>
+<div class="outer-div">
+  <div class="titles">
+    <h1><%= @creator.username%>'s Restaurants</h1>
+  </div>
+  <div id="home-view">
+    <h3>Created Restaurants</h3>
+    <% current_user.created_restaurants.each do |created_restaurant| %>
+    <a href="/restaurants/<%=created_restaurant.id%>" class="wrapper"><%=created_restaurant.name%></a>
+    <br>
+    <%end%>
 
-<div class="grid-container" id="home-view">
-<% current_user.created_restaurants.each do |created_restaurant| %>
-  <a href="/restaurants/<%=created_restaurant.id%>" class="grid-item created-restaurant"><%=created_restaurant.name%></a>
-  <br>
-<%end%>
-</div>
-<br>
+    <br>
 
-<h3 class="titles">Bookmarked Restaurants</h3>
-<div class="grid-container" id="home-view">
-<% current_user.restaurants.each do |restaurant| %>
-  <% if current_user != restaurant.creator %>
-  <a href="/restaurants/<%=restaurant.id%>" class="grid-item restaurant"><%=restaurant.name%></a>
-  <br>
-  <%end%>
-<%end%>
+    <h3>Bookmarked Restaurants</h3>
+
+    <% current_user.restaurants.each do |restaurant| %>
+    <% if current_user != restaurant.creator %>
+    <a href="/restaurants/<%=restaurant.id%>" class="wrapper"><%=restaurant.name%></a>
+    <br>
+    <%end%>
+    <%end%>
+  </div>
 </div>
