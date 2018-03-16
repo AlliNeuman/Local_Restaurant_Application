@@ -6,8 +6,13 @@
 
     <% current_user.created_restaurants.each do |created_restaurant| %>
       <div class='breaking-display-block'>
-        <a href="/restaurants/<%=created_restaurant.id%>" class="wrapper col-8"><%=created_restaurant.name%></a>
+        <%if current_user.created_restaurant.visited %>
+        <a href="/restaurants/<%=created_restaurant.id%>" id="visited" class="wrapper col-8"><%=created_restaurant.name%></a>
+        <%else%>
+        <a href="/restaurants/<%=created_restaurant.id%>" id="wish-list" class="wrapper col-8"><%=created_restaurant.name%></a>
+
       </div>
+      <%end%>
     <%end%>
   </div>
 
