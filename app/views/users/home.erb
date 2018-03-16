@@ -1,0 +1,34 @@
+<div class="outer-div" id="user-home">
+  <h1 class="home-title"><%= @user.username%>'s Restaurants</h1>
+
+  <div id="created" class="section">
+    <h3 id="created-title">Created Restaurants</h3>
+
+    <% if current_user.restaurants.visited %>
+    <% current_user.restaurant.each do |bookmark| %>
+    <div class="breaking-display-block">
+<%binding.pry%>
+    if current_user
+
+        <%if current_user.created_restaurant.visited %>
+        <a href="/restaurants/<%=created_restaurant.id%>" id="visited" class="wrapper col-8"><%=created_restaurant.name%></a>
+        <%else%>
+        <a href="/restaurants/<%=created_restaurant.id%>" id="wish-list" class="wrapper col-8"><%=created_restaurant.name%></a>
+
+      </div>
+      <%end%>
+    <%end%>
+  </div>
+
+  <div id="bookmarked" class="section">
+    <h3 id="bookmarked-title">Bookmarked Restaurants</h3>
+
+    <% current_user.restaurants.each do |restaurant| %>
+      <% if current_user != restaurant.creator %>
+        <div class='breaking-display-block'>
+          <a href="/restaurants/<%=restaurant.id%>" class="wrapper col-8"><%=restaurant.name%></a>
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+</div>

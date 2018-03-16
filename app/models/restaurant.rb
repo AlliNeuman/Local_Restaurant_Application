@@ -23,5 +23,9 @@ class Restaurant < ActiveRecord::Base
     self.save
   end
 
+  def visited_restaurant?
+    @restaurants = Restaurant.all
+    if @restaurant.visited?
+
 
 end
