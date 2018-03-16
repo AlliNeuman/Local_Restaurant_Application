@@ -31,16 +31,17 @@
         <a href="/login">Log In</a>
 
       <% end %>
+      <div class="flash-message">
+      <% if flash.has?(:message)%>
+        <%= flash[:message]%>
+        <% flash[:message]%>
+        <% flash[:message] = nil %>
+        <% end %>
+      </div>
     </div>
     <br><br>
 
-    <div class="flash-message">
-    <% if flash.has?(:message)%>
-      <%= flash[:message]%>
-      <% flash[:message]%>
-      <% flash[:message] = nil %>
-      <% end %>
-    </div>
+
 
     <div class="container">
 

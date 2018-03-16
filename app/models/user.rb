@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   def visited_restaurant
     self.restaurants.order("visited='true'", :name)
+
   end
 
   def wish_list
