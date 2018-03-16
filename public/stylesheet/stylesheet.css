@@ -47,6 +47,7 @@ div.container {
   float: left;
   padding: 15px;
 
+
 }
 
 .center {
@@ -175,8 +176,15 @@ p.welcome-user {
 
 /* INDEX */
 
-div#index-page > img {
+#index-page.outer-div.center{
+  margin: 7px;
+}
+
+
+img.wrapper ~ img {
+  width: 90%;
   padding: 10px;
+  margin: 25px;
 
 }
 
