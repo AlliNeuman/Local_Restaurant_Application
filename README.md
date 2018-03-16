@@ -17,3 +17,9 @@ To use recipe_database_app:
 + Run `rake db:migrate`
 + Run `Rake db:seed`
 + Run `shotgun`
+
+### Contributors
+This app was created with love by Alli Tzadok.
+
+### MIT license
+https://github.com/AlliTzadok/Local_Restaurant_Application/blob/master/LICENSE
