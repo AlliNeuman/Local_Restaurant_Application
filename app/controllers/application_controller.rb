@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def user_params_blank?
-      params[:username] == "" || params[:email] == "" || params[:password] == "" || params[:username] == nil || params[:email] == nil || params[:password] == nil
+      params[:username] == "" || params[:password] == ""
     end
 
     def restaurant_params_blank?

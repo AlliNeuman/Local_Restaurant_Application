@@ -8,9 +8,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
 
-  validates :username, length: { minimum: 3 }
-  validates :password, length: { in: 6..20 }
-
   def visited_restaurant
     self.restaurants.order("visited='true'", :name)
   end
