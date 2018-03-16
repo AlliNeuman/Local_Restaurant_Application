@@ -96,6 +96,9 @@ a {
 }
 
 #login-signup {
+  margin-top: 10%;
+  width: 50%;
+  height: 50%;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
