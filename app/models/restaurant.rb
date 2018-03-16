@@ -16,8 +16,12 @@ class Restaurant < ActiveRecord::Base
     @bookmark.save
   end
 
-  def remove_creator_assocation
+  def remove_creator_assocation_and_bookmark
+    @bookmark = Bookmark.find_by(restaurant_id: self.id)
+    @bookmark.destroy
     self.creator = nil
     self.save
   end
+
+
 end

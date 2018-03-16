@@ -32,8 +32,7 @@
 
       <% end %>
     </div>
-
-    <div class="container">
+    <br><br>
 
     <div class="flash-message">
     <% if flash.has?(:message)%>
@@ -42,6 +41,11 @@
       <% flash[:message] = nil %>
       <% end %>
     </div>
+
+    <div class="container">
+
+
+
 
     <%= yield %>
 

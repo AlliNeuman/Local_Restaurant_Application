@@ -91,7 +91,7 @@ class RestaurantController < ApplicationController
     if logged_in?
       @created_restaurant = Restaurant.find_by_id(params[:id])
       if @created_restaurant && @created_restaurant.creator == current_user
-        @created_restaurant.remove_creator_assocation
+        @created_restaurant.remove_creator_assocation_and_bookmark
 
         flash[:message] = "You have successfully removed your restaurant from your home page."
         redirect to '/home'
