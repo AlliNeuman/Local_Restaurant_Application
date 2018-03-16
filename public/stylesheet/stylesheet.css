@@ -45,13 +45,6 @@ body {
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-[class*="col-"]{
-  float: left;
-  padding: 15px;
-
-
-}
-
 .center {
   text-align: center;
   margin-left:auto;
@@ -66,6 +59,8 @@ body {
   border-width: 5px;
   box-shadow:0 1px 0 #cfcfcf;
   width: 100%;
+  text-align: center;
+
 }
 
 .button {
@@ -98,6 +93,199 @@ a {
 
 }
 
+div.container {
+  padding-top: 15%;
+  padding-bottom: 20%;
+  display: block;
+  overflow: hidden;
+}
+
+[class*="col-"] {
+  width: 100%;
+}
+
+input::placeholder {
+text-align: center;
+font-size: 14px;
+font-family: "Poppins", arial, sans-serif;
+}
+
+
+
+input.form-control {
+padding: 1%;
+margin: 10px;
+width: 90%;
+font-size: 14px;
+font-family: "Poppins", sans-serif;
+
+}
+
+
+
+div label {
+line-height: 50%;
+font-weight: bold;
+}
+
+
+/* INDEX */
+
+#index-page.outer-div.center{
+margin-top: 2%
+margin-right: 5%;
+margin-left: 5%;
+padding: 5%;
+
+}
+
+div#index-pictures img {
+margin-bottom: 20px;
+}
+
+div#index-pictures img:first {
+margin-top: 20px;
+}
+
+div#index-pictures img:last-of-type{
+margin-bottom: 100px;
+}
+
+
+
+
+/* RESTAURANT EDIT & NEW */
+
+div#new-restaurant.outer-div.wrapper,
+div#edit-restaurant.outer-div.wrapper {
+margin-bottom: 10%;
+margin-right: 10%;
+margin-left: 10%;
+padding-top: 5%;
+padding-right: 1%;
+padding-left: 1%;
+padding-bottom: 2%;
+}
+
+#new-restaurant h2, #edit-restaurant h2 {
+border-bottom: 1px solid black;
+padding-top: 0;
+}
+
+#edit.button {
+margin-top: 0px;
+}
+
+
+/* RESTAURANT SHOW & INDEX */
+
+div#restaurant-show.outer-div,
+div#restaurant-index.outer-div {
+
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-bottom: 50px;
+  text-align: center;
+  overflow: hidden;
+}
+
+#restaurant-name-title,
+#restaurant-index-title{
+  padding-top: 5%;
+  margin-top: 5%;
+  border-bottom: 1px solid black;
+  text-transform: capitalize;
+
+}
+
+a#restaurant-link {
+
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+div#created-restaurant.wrapper {
+padding-top: 5%;
+padding-bottom: 2%;
+margin-right: 2%;
+margin-left: 2%;
+margin-bottom: 7%;
+text-align: center;
+height: auto;
+text-transform: capitalize;
+justify-content: center;
+line-height: 1em;
+}
+
+#restaurant-address-title{
+  text-transform: capitalize;
+}
+
+#neighborhood, #category {
+  text-transform: capitalize;
+  line-height: 75%;
+  width: 50%;
+}
+
+#user-restaurant-functionality {
+margin-bottom: 20%;
+}
+
+#restaurant-details.wrapper {
+background-color: #EDEDED;
+border-color:#d2d2d2;
+border-radius: 15px;
+border-width: 5px;
+box-shadow:0 1px 0 #cfcfcf;
+text-align: center;
+width: 100%;
+overflow: hidden;
+}
+
+
+/* USER CREATE & LOGIN */
+div.wrapper.col-8 {
+margin-top: 20px;
+padding-bottom: 20px;
+line-height: 2em;
+}
+
+p.requirements {
+font-size: 12px;
+}
+
+/* USER SHOW */
+#user-home {
+padding-right: 5%;
+padding-left: 5%;
+padding-bottom: 25%;
+
+}
+
+h1.home-title {
+text-transform: capitalize;
+text-align: center;
+line-height: 1em;
+margin-bottom: 0px;
+overflow: hidden;
+
+}
+
+/* #visited-restaurants {
+text-align: center;
+padding-top: 20px;
+margin-top: 20px;
+border-bottom: 1px solid black;
+
+} */
+/* #wishlist-restaurants {
+text-align: center;
+border-bottom: 1px solid black;
+} */
+
+#visited-title, #wishlist-title {
+text-align: center;
+}
 
 /* ///////// NAV BAR /////////*/
 div.nav {
@@ -170,202 +358,6 @@ p.welcome-user {
 /* RESPONSIVE FOR SMALL DEVICE */
 /*phones, 600px and up*/
 @media only screen and (max-width: 700px){
-
-  div.container {
-    padding-top: 15%;
-    padding-bottom: 20%;
-    display: block;
-    overflow: hidden;
-  }
-
-  [class*="col-"] {
-    width: 100%;
-}
-
-input::placeholder {
-  text-align: center;
-  font-size: 14px;
-  font-family: "Poppins", arial, sans-serif;
-}
-
-
-
-input.form-control {
-  padding: 1%;
-  margin: 10px;
-  width: 90%;
-  font-size: 14px;
-  font-family: "Poppins", sans-serif;
-
-}
-
-
-
-div label {
-  line-height: 50%;
-  font-weight: bold;
-}
-
-
-/* INDEX */
-
-#index-page.outer-div.center{
-  margin-top: 2%
-  margin-right: 5%;
-  margin-left: 5%;
-  padding: 5%;
-
-}
-
-div#index-pictures img {
-  margin-bottom: 20px;
-}
-
-div#index-pictures img:first {
-  margin-top: 20px;
-}
-
-div#index-pictures img:last-of-type{
-  margin-bottom: 100px;
-}
-
-
-
-
-/* RESTAURANT EDIT & NEW */
-
-div#new-restaurant.outer-div.wrapper,
-div#edit-restaurant.outer-div.wrapper {
-  margin-bottom: 10%;
-  margin-right: 10%;
-  margin-left: 10%;
-  padding-top: 5%;
-  padding-right: 1%;
-  padding-left: 1%;
-  padding-bottom: 2%;
-}
-
-#new-restaurant h2, #edit-restaurant h2 {
-  border-bottom: 1px solid black;
-  padding-top: 0;
-}
-
-#edit.button {
-  margin-top: 0px;
-}
-
-
-/* RESTAURANT SHOW & INDEX */
-
-div#restaurant-show.outer-div,
-div#restaurant-index.outer-div {
-
-    padding-right: 10%;
-    padding-left: 10%;
-    padding-bottom: 50px;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  #restaurant-name-title,
-  #restaurant-index-title{
-    padding-top: 5%;
-    margin-top: 5%;
-    border-bottom: 1px solid black;
-    text-transform: capitalize;
-
-  }
-
-  a#restaurant-link {
-
-    text-transform: capitalize;
-    font-weight: bold;
-  }
-
-div#created-restaurant.wrapper {
-  padding-top: 5%;
-  padding-bottom: 2%;
-  margin-right: 2%;
-  margin-left: 2%;
-  margin-bottom: 7%;
-  text-align: center;
-  height: auto;
-  text-transform: capitalize;
-  justify-content: center;
-  line-height: 1em;
-}
-
-  #restaurant-address-title{
-    text-transform: capitalize;
-  }
-
-  #neighborhood, #category {
-    text-transform: capitalize;
-    line-height: 75%;
-    width: 50%;
-  }
-
-#user-restaurant-functionality {
-  margin-bottom: 20%;
-}
-
-#restaurant-details.wrapper {
-  background-color: #EDEDED;
-  border-color:#d2d2d2;
-  border-radius: 15px;
-  border-width: 5px;
-  box-shadow:0 1px 0 #cfcfcf;
-  text-align: center;
-  width: 100%;
-  overflow: hidden;
-}
-
-
-/* USER CREATE & LOGIN */
-div.wrapper.col-8 {
-  margin-top: 20px;
-  padding-bottom: 20px;
-  line-height: 2em;
-}
-
-p.requirements {
-  font-size: 12px;
-}
-
-/* USER SHOW */
-#user-home {
-  padding-right: 5%;
-  padding-left: 5%;
-  padding-bottom: 25%;
-
-}
-
-h1.home-title {
-  text-transform: capitalize;
-  text-align: center;
-  line-height: 1em;
-  margin-bottom: 0px;
-  overflow: hidden;
-
-}
-
-#visited-restaurants.visited{
-  text-align: center;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-bottom: 1px solid black;
-  background-color: #EDEDED;
-  border-color:#d2d2d2;
-  border-radius: 15px;
-  border-width: 5px;
-  box-shadow:0 1px 0 #cfcfcf;
-  width: 100%;
-
-}
-#wishlist-restaurants {
-text-align: center;
-border-bottom: 1px solid black;
-}
 
 
 }

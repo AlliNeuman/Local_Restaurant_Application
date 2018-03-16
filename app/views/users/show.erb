@@ -1,24 +1,24 @@
 <div class="outer-div" id="user-home">
   <h1 class="home-title"><%= @user.username%>'s Restaurants</h1>
 
-  <div id="visited-restaurants" class="visited wrapper">
-    <p id="visited-title">Visited Restaurants</p>
 
+    <h3 id="visited-title">Visited Restaurants</h3>
 
+    <div class="wrapper" id="visited-restaurants">
     <% @user.visited_restaurant.each do |restaurant| %>
-
-    <a href="/restaurants/<%=restaurant.id%>" id="visited" class="col-8"><%=restaurant.name%></a>
+    <div id="visited">
+      <a href="/restaurants/<%=restaurant.id%>" class="col-8" id="visited"><%=restaurant.name%></a>
+    </div>
 
     <%end%>
   </div>
 
-  <div id="wishlist-restaurants" class="visited wrapper">
-
     <h3 id="wishlist-title">Wishlist Restaurants</h3>
+    <div class="wrapper" id="wishlist-restaurants">
     <% @user.wish_list.each do |restaurant| %>
-
-    <a href="/restaurants/<%=restaurant.id%>" id="wish-list" class="col-8"><%=restaurant.name%></a>
-
+    <div id="wish-list">
+    <a href="/restaurants/<%=restaurant.id%>" class="col-8" id="wish-list"><%=restaurant.name%></a>
+  </div>
     <%end%>
 
   </div>
