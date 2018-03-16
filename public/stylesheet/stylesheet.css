@@ -5,7 +5,7 @@ body.bkgd-image {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box;-
 }
 
 h1 {
@@ -177,15 +177,24 @@ p.welcome-user {
 /* INDEX */
 
 #index-page.outer-div.center{
-  margin: 10px;
+  margin-top: 2%
+  margin-right: 5%;
+  margin-left: 5%;
+  /* margin-bottom: 60px; */
+  padding: 5%;
 
 }
 
 div#index-pictures img {
-  width: 90%;
-  padding: 15px;
-  margin: 15px;
+  margin-bottom: 20px;
+}
 
+div#index-pictures img:first {
+  margin-top: 20px;
+}
+
+div#index-pictures img:last-of-type{
+  margin-bottom: 100px;
 }
 
 
