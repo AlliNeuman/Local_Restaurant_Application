@@ -91,13 +91,23 @@ textarea::placeholder {
 input.form-control {
   padding: 5px;
   margin: 10px;
-  width: 250px;
+  width: 300px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+
 }
 
-textarea {
+textarea, textarea.form-control {
   padding: 5px;
   margin: 10px;
-  width: 250px;
+  width: 300px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+div label {
+  line-height: 50%;
+  font-weight: bold;
 }
 
 div.outer-div {
@@ -220,7 +230,8 @@ div#index-pictures img:last-of-type{
 
 /* RESTAURANT EDIT & NEW */
 
-div#new-restaurant.outer-div.wrapper {
+div#new-restaurant.outer-div.wrapper,
+div#edit-restaurant.outer-div.wrapper {
   margin-top: 10%;
   margin-bottom: 10%;
   margin-right: 10%;
@@ -228,8 +239,12 @@ div#new-restaurant.outer-div.wrapper {
   padding: 10%;
 }
 
-#new-restaurant h2 {
+#new-restaurant h2, #edit-restaurant h2 {
   border-bottom: 1px solid black;
+}
+
+#edit.button {
+  margin-top: 0px;
 }
 
 

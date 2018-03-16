@@ -1,34 +1,32 @@
-<div class="outer-div wrapper">
-  <div class="titles">
-    <h3>Edit Restaurant</h3>
-    <p>Make sure all fields have an input</p>
-  </div>
+<div class="outer-div wrapper" id="edit-restaurant">
 
-  <div class="col-8">
-    <form method="post" id="edit-restaurant" action="/restaurants/<%=@created_restaurant.id%>">
-      <div class="form-input">
-        <input id="hidden" type="hidden" name="_method" value="PATCH">
-        <label>Restaurant Name</label>
-        <br>
-        <input type="text" name="name" class="form-control" value="<%=@created_restaurant.name%>">
-        <br><br>
-        <label>Neighborhood</label>
-        <br>
-        <input type="text" name="neighborhood" class="form-control" value="<%=@created_restaurant.neighborhood%>">
-        <br><br>
-        <label>Street Address</label>
-        <br>
-        <input type="text" name="street_address" class="form-control" value="<%=@created_restaurant.street_address%>">
-        <br><br>
-        <label>Category</label>
-        <br>
-        <textarea name="category" form="edit-restaurant" class="form-control" rows="3" cols="30"><%=@created_restaurant.category%></textarea>
-        <br><br>
-        <label>Notes about what the restaurant is known for</label>
-        <br>
-        <textarea name="tips" form="edit-restaurant" class="form-control" rows="5" cols="50"><%=@created_restaurant.tips%></textarea><br><br>
-        <input type="submit" class="button" value="submit">
-      </div>
-    </form>
-  </div>
+  <h2>Edit Restaurant</h2>
+  <p>Make sure all fields have an input.</p>
+
+  <form method="post" id="edit-restaurant" action="/restaurants/<%=@created_restaurant.id%>">
+    <div class="form-input">
+      <input id="hidden" type="hidden" name="_method" value="PATCH">
+      <label>Restaurant Name</label>
+      <br>
+      <input type="text" name="name" class="form-control" value="<%=@created_restaurant.name%>">
+      <br>
+      <label>Neighborhood</label>
+      <br>
+      <input type="text" name="neighborhood" class="form-control" value="<%=@created_restaurant.neighborhood%>">
+      <br>
+      <label>Street Address</label>
+      <br>
+      <input type="text" name="street_address" class="form-control" value="<%=@created_restaurant.street_address%>">
+      <br>
+      <label>Category</label>
+      <br>
+      <textarea name="category" form="edit-restaurant" class="form-control" rows="3" cols="30"><%=@created_restaurant.category%></textarea>
+      <br>
+      <label>User Tips and Recommendations</label>
+      <br>
+      <textarea name="tips" form="edit-restaurant" class="form-control" rows="5" cols="50"><%=@created_restaurant.tips%></textarea><br><br>
+
+      <input type="submit" class="button" id="edit" value="submit">
+    </div>
+  </form>
 </div>
