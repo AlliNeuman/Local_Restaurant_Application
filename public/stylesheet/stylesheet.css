@@ -364,6 +364,9 @@ a.wrapper {
 h1.home-title {
   text-transform: capitalize;
   text-align: center;
+  line-height: 1em;
+  margin-bottom: 0px;
+  overflow: hidden;
 
 }
 

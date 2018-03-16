@@ -20,11 +20,11 @@
       <br>
       <label>Category</label>
       <br>
-      <textarea name="category" form="edit-restaurant" class="form-control" rows="3" cols="30"><%=@created_restaurant.category%></textarea>
+      <input type="text" name="category" class="form-control" value="<%=@created_restaurant.category%>">
       <br>
       <label>User Tips and Recommendations</label>
       <br>
-      <textarea name="tips" form="edit-restaurant" class="form-control" rows="5" cols="50"><%=@created_restaurant.tips%></textarea><br><br>
+      <input type="text" name="tips" class="form-control"value="<%=@created_restaurant.tips%>"><br>
 
       <input type="submit" class="button" id="edit" value="submit">
     </div>
