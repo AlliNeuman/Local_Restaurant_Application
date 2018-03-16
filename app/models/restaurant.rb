@@ -3,6 +3,7 @@ class Restaurant < ActiveRecord::Base
   has_many :bookmarks
   has_many :users, through: :bookmarks
 
+
   validates_presence_of :name, message: "Restaurant name missing."
   validates_presence_of :category, message: "Restaurant category missing."
   validates_presence_of :tips, message: "Restaurant tips missing."
@@ -23,9 +24,5 @@ class Restaurant < ActiveRecord::Base
     self.save
   end
 
-  def visited_restaurant?
-    @restaurants = Restaurant.all
-    @restaurants.order("visited = 'true' ASC")
-  end
 
 end

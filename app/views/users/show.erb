@@ -1,30 +1,24 @@
 <div class="outer-div" id="user-home">
-  <h1 class="home-title"><%= @creator.username%>'s Restaurants</h1>
+  <h1 class="home-title"><%= @user.username%>'s Restaurants</h1>
 
-  <div id="created" class="section">
-    <h3 id="created-title">Created Restaurants</h3>
+  <div id="visited-restaurants" class="visited wrapper">
+    <h3 id="visited-title">Visited Restaurants</h3>
+    <% @user.visited_restaurant.each do |restaurant| %>
 
-    <% current_user.created_restaurants.each do |created_restaurant| %>
-      <div class='breaking-display-block'>
-        <%if current_user.created_restaurant.visited %>
-        <a href="/restaurants/<%=created_restaurant.id%>" id="visited" class="wrapper col-8"><%=created_restaurant.name%></a>
-        <%else%>
-        <a href="/restaurants/<%=created_restaurant.id%>" id="wish-list" class="wrapper col-8"><%=created_restaurant.name%></a>
+    <a href="/restaurants/<%=restaurant.id%>" id="visited" class="col-8"><%=restaurant.name%></a>
 
-      </div>
-      <%end%>
     <%end%>
   </div>
 
-  <div id="bookmarked" class="section">
-    <h3 id="bookmarked-title">Bookmarked Restaurants</h3>
+  <div id="wishlist-restaurants" class="visited wrapper">
+    <h3 id="wishlist-title">Wishlist Restaurants</h3>
+    <% @user.wish_list.each do |restaurant| %>
 
-    <% current_user.restaurants.each do |restaurant| %>
-      <% if current_user != restaurant.creator %>
-        <div class='breaking-display-block'>
-          <a href="/restaurants/<%=restaurant.id%>" class="wrapper col-8"><%=restaurant.name%></a>
-        </div>
-      <%end%>
+    <a href="/restaurants/<%=restaurant.id%>" id="wish-list" class="col-8"><%=restaurant.name%></a>
+
     <%end%>
+
   </div>
+
+
 </div>

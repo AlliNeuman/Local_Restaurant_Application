@@ -4,11 +4,9 @@ class UserController < ApplicationController
     if !logged_in?
       redirect to '/restaurants'
     else
-      # changed the below line from creator to user to check code
-      # @creator = User.find_by_id(session[:user_id])
       @user = User.find_by_id(session[:user_id])
-      # erb :'users/show'
-      erb :'users/home'
+      erb :'users/show'
+
     end
   end
 

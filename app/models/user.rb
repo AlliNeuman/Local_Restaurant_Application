@@ -11,5 +11,12 @@ class User < ActiveRecord::Base
   validates :username, length: { minimum: 3 }
   validates :password, length: { in: 6..20 }
 
+  def visited_restaurant
+    self.restaurants.order("visited='true'", :name)
+  end
+
+  def wish_list
+    self.restaurants.order("visited='false'", :name)
+  end
 
 end
