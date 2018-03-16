@@ -177,14 +177,14 @@ p.welcome-user {
 /* INDEX */
 
 #index-page.outer-div.center{
-  margin: 7px;
+  margin: 10px;
+
 }
 
-
-img.wrapper ~ img {
+div#index-pictures img {
   width: 90%;
-  padding: 10px;
-  margin: 25px;
+  padding: 15px;
+  margin: 15px;
 
 }
 
