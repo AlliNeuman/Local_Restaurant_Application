@@ -25,7 +25,7 @@ class Restaurant < ActiveRecord::Base
 
   def visited_restaurant?
     @restaurants = Restaurant.all
-    if @restaurant.visited?
-
+    @restaurants.order("visited = 'true' ASC")
+  end
 
 end

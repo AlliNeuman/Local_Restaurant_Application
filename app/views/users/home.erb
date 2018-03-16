@@ -4,11 +4,9 @@
   <div id="created" class="section">
     <h3 id="created-title">Created Restaurants</h3>
 
-    <% if current_user.restaurants.visited %>
+    <% if current_user.visited_restaurant? %>
     <% current_user.restaurant.each do |bookmark| %>
     <div class="breaking-display-block">
-<%binding.pry%>
-    if current_user
 
         <%if current_user.created_restaurant.visited %>
         <a href="/restaurants/<%=created_restaurant.id%>" id="visited" class="wrapper col-8"><%=created_restaurant.name%></a>
