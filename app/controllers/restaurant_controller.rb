@@ -42,6 +42,7 @@ class RestaurantController < ApplicationController
   post '/restaurants' do
     if logged_in?
       if restaurant_params_blank?
+        binding.pry
         flash[:message] = "Make sure to fill out all fields."
         redirect to "/restaurants/new"
       else

@@ -30,7 +30,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def restaurant_params_blank?
-      params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == "" || params[:name] == nil || params[:street_address] == nil || params[:neighborhood] == nil || params[:category] == nil || params[:tips] == nil
+      params[:name] == "" || params[:street_address] == "" || params[:neighborhood] == "" || params[:category] == "" || params[:tips] == ""
     end
 
 
