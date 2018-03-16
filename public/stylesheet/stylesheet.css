@@ -65,7 +65,6 @@ body {
   border-radius: 15px;
   border-width: 5px;
   box-shadow:0 1px 0 #cfcfcf;
-  text-align: center;
   width: 100%;
 }
 
@@ -341,24 +340,6 @@ p.requirements {
 
 }
 
-.section {
-  display: block;
-  padding-left: 12%;
-  padding-right: 12%;
-  margin-bottom: 100px;
-}
-
-.breaking-display-block{
-  display: block;
-  margin-bottom: 50px;
-}
-
-a.wrapper {
-  display:block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 h1.home-title {
   text-transform: capitalize;
   text-align: center;
@@ -368,22 +349,23 @@ h1.home-title {
 
 }
 
-#created-title{
+#visited-restaurants.visited{
   text-align: center;
   padding-top: 20px;
   margin-top: 20px;
   border-bottom: 1px solid black;
+  background-color: #EDEDED;
+  border-color:#d2d2d2;
+  border-radius: 15px;
+  border-width: 5px;
+  box-shadow:0 1px 0 #cfcfcf;
+  width: 100%;
 
 }
-#bookmarked-title {
+#wishlist-restaurants {
 text-align: center;
-padding-top: 15%;
-line-height: 3em;
-vertical-align: text-bottom;
 border-bottom: 1px solid black;
 }
-
-
 
 
 }
@@ -392,213 +374,6 @@ border-bottom: 1px solid black;
 /* RESPONSIVE FOR SMALL DEVICE */
 /*tablets and large phones */
 @media only screen and (min-width: 700px) and (max-width: 768px){
-
-
-    div.container {
-      padding-top: 5%;
-      padding-bottom: 20%;
-      display: block;
-      overflow: hidden;
-    }
-
-    [class*="col-"] {
-      width: 48%;
-      margin: 1%;
-  }
-
-  input::placeholder {
-    text-align: center;
-    font-size: 14px;
-    font-family: "Poppins", arial, sans-serif;
-  }
-
-
-  input.form-control {
-    padding: 1%;
-    margin: 10px;
-    width: 90%;
-    font-size: 14px;
-    font-family: "Poppins", sans-serif;
-
-  }
-
-
-
-  div label {
-    line-height: 50%;
-    font-weight: bold;
-  }
-
-
-  /* INDEX */
-
-  #index-page.outer-div.center{
-    margin-top: 2%;
-    margin-right: 5%;
-    margin-left: 5%;
-    padding: 5%;
-
-  }
-
-  div#index-pictures img {
-    margin-bottom: 20px;
-  }
-
-  div#index-pictures img:first {
-    margin-top: 20px;
-  }
-
-  div#index-pictures img:last-of-type{
-    margin-bottom: 100px;
-  }
-
-
-
-
-  /* RESTAURANT EDIT & NEW */
-
-  div#new-restaurant.outer-div.wrapper,
-  div#edit-restaurant.outer-div.wrapper {
-    margin-bottom: 10%;
-    margin-right: 10%;
-    margin-left: 10%;
-    padding-top: 5%;
-    padding-right: 1%;
-    padding-left: 1%;
-    padding-bottom: 2%;
-  }
-
-  #new-restaurant h2, #edit-restaurant h2 {
-    border-bottom: 1px solid black;
-    padding-top: 0;
-  }
-
-  #edit.button {
-    margin-top: 0px;
-  }
-
-
-  /* RESTAURANT SHOW & INDEX */
-
-  div#restaurant-show.outer-div,
-  div#restaurant-index.outer-div {
-
-      padding-right: 10%;
-      padding-left: 10%;
-      padding-bottom: 50px;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    #restaurant-name-title,
-    #restaurant-index-title{
-      padding-top: 5%;
-      margin-top: 5%;
-      border-bottom: 1px solid black;
-      text-transform: capitalize;
-
-    }
-
-    a#restaurant-link {
-
-      text-transform: capitalize;
-      font-weight: bold;
-    }
-
-  div#created-restaurant.wrapper {
-    padding-top: 5%;
-    padding-bottom: 2%;
-    margin-right: 2%;
-    margin-left: 2%;
-    margin-bottom: 7%;
-    text-align: center;
-    height: auto;
-    text-transform: capitalize;
-    justify-content: center;
-    line-height: 1em;
-  }
-
-    #restaurant-address-title{
-      text-transform: capitalize;
-    }
-
-    #neighborhood, #category {
-      text-transform: capitalize;
-      line-height: 75%;
-      width: 50%;
-    }
-
-  #user-restaurant-functionality {
-    margin-bottom: 20%;
-  }
-
-  #restaurant-details.wrapper {
-    background-color: #EDEDED;
-    border-color:#d2d2d2;
-    border-radius: 15px;
-    border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf;
-    text-align: center;
-    width: 100%;
-    overflow: hidden;
-  }
-
-
-  /* USER CREATE & LOGIN */
-  div.wrapper.col-8 {
-    padding-bottom: 20px;
-  }
-
-  p.requirements {
-    font-size: 12px;
-  }
-
-  /* USER SHOW */
-  #user-home {
-    padding-right: 5%;
-    padding-left: 5%;
-    padding-bottom: 25%;
-
-  }
-
-  .section {
-    display: block;
-    padding-left: 12%;
-    padding-right: 12%;
-    margin-bottom: 100px;
-  }
-
-  .breaking-display-block{
-    display: block;
-    margin-bottom: 50px;
-  }
-
-  a.wrapper {
-    display:block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  h1.home-title {
-    text-transform: capitalize;
-    text-align: center;
-
-  }
-
-  #created-title{
-    text-align: center;
-    padding-top: 20px;
-    margin-top: 20px;
-    border-bottom: 1px solid black;
-
-  }
-  #bookmarked-title {
-  text-align: center;
-  padding-top: 15%;
-  line-height: 3em;
-  vertical-align: text-bottom;
-  border-bottom: 1px solid black;
-  }
 
 }
 /*RESPONSIVE FOR MEDIUM DEVICES */
