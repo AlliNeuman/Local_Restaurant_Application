@@ -33,7 +33,7 @@ class BookmarkController < ApplicationController
       @bookmark = Bookmark.find_by_id(params[:id])
       if @bookmark && @bookmark.user_id == current_user.id
 
-        if @bookmark.update(visited: params[:visited])
+        if @bookmark.update(visited: params[:visited], restaurant_id: params[:restaurant_id], user_id: params[:user_id])
           flash[:message] = "You have successfully edited your bookmark entry."
           redirect to "/home"
         else
@@ -53,12 +53,13 @@ class BookmarkController < ApplicationController
   delete '/bookmarks/:id' do
     if logged_in?
       @bookmark = Bookmark.find_by_id(params[:id])
-      if @bookmark && @bookmark.user_id == current_user
+      if @bookmark && @bookmark.user_id == current_user.id
         @bookmark.destroy
         flash[:message] = "You have successfully deleted your bookmark."
         redirect to '/home'
       else
         flash[:message] = "Sorry, you don't have authority to delete this bookmark."
+        redirect to '/home'
       end
     else
       flash[:message] = "Please log in if you would like to remove bookmark."
