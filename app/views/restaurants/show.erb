@@ -41,10 +41,10 @@
 
       <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">
         <input id="hidden" type="hidden" name="_method" value="PATCH">
-        <input id="visited" type="radio" name="visited"  value="visited" <%='checked' if current_user.visited_restaurant.include?(@created_restaurant)%>>Been There!</input>
+        <input id="visited" type="radio" name="visited"  value="true" <%='checked' if current_user.visited_restaurant.include?(@created_restaurant)%>>Been There!</input>
         <br>
 
-        <input id="wish-list" type="radio" name="visited" value="wish-list" <%='checked' if !current_user.visited_restaurant.include?(@created_restaurant)%>>Still Need To Go</input>
+        <input id="wish-list" type="radio" name="visited" value="false" <%='checked' if !current_user.visited_restaurant.include?(@created_restaurant)%>>Still Need To Go</input>
         <input type="hidden" name="restaurant_id" value="<%=@created_restaurant.id%>">
         <input type="hidden" name="user_id" value="<%=current_user.id%>">
         <br>
