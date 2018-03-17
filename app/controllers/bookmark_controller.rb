@@ -31,8 +31,8 @@ class BookmarkController < ApplicationController
   patch '/bookmarks/:id' do
     if logged_in?
       @bookmark = Bookmark.find_by_id(params[:id])
-      if @bookmark && @bookmark.user_id == current_user
-        binding.pry
+      if @bookmark && @bookmark.user_id == current_user.id
+
         if @bookmark.update(visited: params[:visited])
           flash[:message] = "You have successfully edited your bookmark entry."
           redirect to "/home"
