@@ -1,0 +1,40 @@
+=> [[32m#<Bookmark:0x00000005259d88[0m
+  id: [1;34m38[0m,
+  user_id: [1;34m63[0m,
+  restaurant_id: [1;34m384[0m,
+  visited: [1;36mtrue[0m[32m>[0m,
+ [32m#<Bookmark:0x0000000527dd00[0m
+  id: [1;34m39[0m,
+  user_id: [1;34m63[0m,
+  restaurant_id: [1;34m373[0m,
+  visited: [1;36mtrue[0m[32m>[0m,
+ [32m#<Bookmark:0x0000000527db20[0m
+  id: [1;34m40[0m,
+  user_id: [1;34m63[0m,
+  restaurant_id: [1;34m393[0m,
+  visited: [1;36mfalse[0m[32m>[0m,
+ [32m#<Bookmark:0x0000000527d940[0m
+  id: [1;34m47[0m,
+  user_id: [1;34m63[0m,
+  restaurant_id: [1;34m366[0m,
+  visited: [1;36mtrue[0m[32m>[0m,
+ [32m#<Bookmark:0x0000000527d760[0m
+  id: [1;34m48[0m,
+  user_id: [1;34m63[0m,
+  restaurant_id: [1;34m364[0m,
+  visited: [1;36mtrue[0m[32m>[0m,
+ [32m#<Bookmark:0x0000000527d580[0m
+  id: [1;34m49[0m,
+  user_id: [1;34m63[0m,
+  restaurant_id: [1;34m367[0m,
+  visited: [1;36mtrue[0m[32m>[0m,
+ [32m#<Bookmark:0x0000000527d3a0[0m
+  id: [1;34m50[0m,
+  user_id: [1;34m63[0m,
+  restaurant_id: [1;34m375[0m,
+  visited: [1;36mtrue[0m[32m>[0m,
+ [32m#<Bookmark:0x0000000527d1c0[0m
+  id: [1;34m51[0m,
+  user_id: [1;34m63[0m,
+  restaurant_id: [1;34m379[0m,
+  visited: [1;36mtrue[0m[32m>[0m]

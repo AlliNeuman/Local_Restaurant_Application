@@ -32,11 +32,10 @@
 
       <% end %>
       <div class="flash-message">
-      <% if flash.has?(:message)%>
-        <%= flash[:message]%>
-        <% flash[:message]%>
-        <% flash[:message] = nil %>
+      <% if !!flash[:message] %>
+        <%= flash[:message] %>
         <% end %>
+
       </div>
     </div>
     <br><br>

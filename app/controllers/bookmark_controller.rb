@@ -1,5 +1,16 @@
 class BookmarkController < ApplicationController
 
+  # get '/bookmarks' do
+  #   if logged_in?
+  #     @bookmarks = Bookmark.all?
+  #     erb :'users/show'
+  #   else
+  #     flash[:message] = "You must be logged in to view your bookmarks."
+  #     redirect to "/login"
+  #   end
+  # end
+
+
   post '/bookmarks' do
     if logged_in?
       @bookmark = current_user.bookmarks.build(visited: params[:visited], restaurant_id: params[:restaurant_id], user_id: params[:user_id])
@@ -21,7 +32,8 @@ class BookmarkController < ApplicationController
     if logged_in?
       @bookmark = Bookmark.find_by_id(params[:id])
       if @bookmark && @bookmark.user_id == current_user
-        if @bookmark.update(visited: params[:visited], restaurant_id: params[:restaurant_id], user_id: params[:user_id])
+        binding.pry
+        if @bookmark.update(visited: params[:visited])
           flash[:message] = "You have successfully edited your bookmark entry."
           redirect to "/home"
         else

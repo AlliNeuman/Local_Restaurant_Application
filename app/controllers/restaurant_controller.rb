@@ -5,6 +5,7 @@ class RestaurantController < ApplicationController
       @created_restaurants = Restaurant.all
       erb :'restaurants/index'
     else
+      flash[:message] = "You must be logged in to view restaurants."
       redirect to '/login'
     end
   end

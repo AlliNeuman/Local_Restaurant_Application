@@ -37,7 +37,6 @@
 
       <% elsif current_user.bookmarks.include?(Bookmark.find_by(restaurant_id: @created_restaurant.id)) %>
       <% @bookmark = current_user.bookmarks.find_by(restaurant_id: @created_restaurant.id)%>
-
       <p>Want to edit or delete your bookmark?</p>
 
       <form action="/bookmarks/<%=@bookmark.id%>" method="post" class="bookmark">

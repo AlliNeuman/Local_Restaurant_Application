@@ -8,13 +8,15 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
 
+
   def visited_restaurant
-    self.restaurants.order("visited='true'", :name)
+    self.restaurants.where("visited = ?", true).order(:name)
 
   end
 
   def wish_list
-    self.restaurants.order("visited='false'", :name)
+    self.restaurants.where("visited = ?", false).order(:name)
   end
+
 
 end
