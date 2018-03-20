@@ -44,3 +44,9 @@ Bookmark.create(visited: "false", restaurant_id: Restaurant.find_by_name("spence
 Bookmark.create(visited: "true", restaurant_id: Restaurant.find_by_name("favazzas").id,  user_id: User.find_by_username("stacy").id)
 Bookmark.create(visited: "true", restaurant_id: Restaurant.find_by_name("seamus mcdaniels").id, user_id: User.find_by_username("dave").id)
 Bookmark.create(visited: "false", restaurant_id: Restaurant.find_by_name("mai lee").id, user_id: User.find_by_username("dave").id)
+
+Restaurant.all.each do |restaurant|
+  Bookmark.new(user_id: User.find_by_name("#{username}").id, restaurant_id: Restaurant.find_by_name("#{name}").id)
+    Bookmark.visited = true
+    Bookmark.save
+    end 
