@@ -10,13 +10,19 @@ class User < ActiveRecord::Base
 
 
   def visited_restaurant
-    self.restaurants.where("visited = ?", true).order(:name)
-
+    if current_user.id == creator.id
+      self.created_restaurants.where("visited = ?", true).order(:name)
+    else
+      self.restaurants.where("visited = ?", true).order(:name)
   end
 
-  def wish_list
-    self.restaurants.where("visited = ?", false).order(:name)
+  def wishlist_restaurant
+    if current_user.id == creator.id  
+      restaurants.where("visited = ?", false).order(:name), self.created_restaurants.where("visited = ?", false).order(:name)
+    else
+    self.restaurants.where("visited = ?", false).order(:name), self.created_restaurants.where("visited = ?", false).order(:name)
   end
+
 
 
 end

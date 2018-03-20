@@ -26,9 +26,9 @@
       <br>
       <input type="text" name="tips" class="form-control"value="<%=@created_restaurant.tips%>"><br>
       <br>
-      <input id="visited" type="radio" name="visited" value="visited">Been There!</input>
+      <input id="visited" type="radio" name="visited" value="true" <%='checked' if current_user.visited_restaurant.include?(@created_restaurant)%>>Been There!</input>
       <br>
-      <input id="wish-list" type="radio" name="visited" value="wish-list" >Still Need To Go!</input>
+      <input id="wish-list" type="radio" name="visited" value="false" <%='checked' if !current_user.visited_restaurant.include?(@created_restaurant)%>>Still Need To Go!</input>
       <br>
       <input type="submit" class="button" id="edit" value="submit">
     </div>
