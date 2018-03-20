@@ -5,7 +5,7 @@ class Restaurant < ActiveRecord::Base
 
 
   def bookmark_saved_restaurant(user_id, visited)
-    @bookmark = Bookmark.new(visited: visited)
+    @bookmark = Bookmark.new(user_id: user_id, visited: visited)
     @bookmark.restaurant_id = self.id
     @bookmark.user_id = self.user_id
     @bookmark.save

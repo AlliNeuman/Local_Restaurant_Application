@@ -43,7 +43,6 @@ class RestaurantController < ApplicationController
   post '/restaurants' do
     if logged_in?
       if restaurant_params_blank?
-        binding.pry
         flash[:message] = "Make sure to fill out all fields."
         redirect to "/restaurants/new"
       else
@@ -71,6 +70,9 @@ class RestaurantController < ApplicationController
         @created_restaurant = Restaurant.find_by_id(params[:id])
         if @created_restaurant && @created_restaurant.creator == current_user
           if @created_restaurant.update(name: params[:name], neighborhood: params[:neighborhood], street_address: params[:street_address], category: params[:category], tips: params[:tips])
+
+            bookmark = Bookmark.find_by(user_id: current_user.id, restaurant_id: @created_restaurant.id)
+            bookmark.update(visited: params[:visited])
             flash[:message] = "You have successfully edited your restaurant entry."
             redirect to "/restaurants/#{@created_restaurant.id}"
           else

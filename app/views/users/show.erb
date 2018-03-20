@@ -5,14 +5,12 @@
     <h3 id="visited-title">Visited Restaurants</h3>
 
     <div class="wrapper" id="visited-restaurants">
-    <% @user.visited_bookmark.each do |restaurant| %>
+    <% @user.visited_restaurant.each do |restaurant| %>
     <div id="visited">
       <a href="/restaurants/<%=restaurant.id%>" class="col-8" id="visited"><%=restaurant.name%></a>
     </div>
 
     <%end%>
-
-    
   </div>
 
     <h3 id="wishlist-title">Wishlist Restaurants</h3>
