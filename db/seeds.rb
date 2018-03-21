@@ -50,8 +50,7 @@ user_list = [
 ["dave", "davepw"],
 ["stacy", "stacypw"],
 ["alli", "allipw"],
-]
-
+] 
 restaurants_list = [
 ["broadway oyster bar", "downtown", "736 S. broadway", "creole", "Get their fried alligator bites!", User.find_by_username("dave")],
 ["kemolls", "downtown", "211 n. broadway", "italian", "Sign up for their email list so you get their 'spend 60 for $100' gift certificate. When booking reservation ask for a table with a view. Ask for an uncooked garlic cheesebread to take home with your leftovers.", User.find_by_username("alli")],
@@ -105,3 +104,12 @@ bookmarks_list [
 user_list.each do |user|
   User.create(:username => user[0], :password => user[1])
 end
+
+restaurants_list.each do |restaurant|
+  Restaurant.create(:name => restaurant[0], :neighborhood => restaurant[1], :street_address => restaurant[2], :category => restaurant[3], :tips => restaurant[4], :creator => restaurant[5])
+  Bookmark.create(:visited => true, :restaurant_id => restaurant[0].id, :user_id => restaurant[5].id)
+end 
+
+bookmarks_list.each do |bookmark|
+  Bookmark.create(:visited => bookmark[0], :restaurant_id => bookmark[1], :user_id => bookmark[2])
+end 
