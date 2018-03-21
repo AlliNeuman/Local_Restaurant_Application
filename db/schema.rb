@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 20180316022316) do
     t.boolean "visited", default: false
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "category"
