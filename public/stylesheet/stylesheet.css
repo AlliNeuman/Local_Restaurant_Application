@@ -304,6 +304,11 @@ overflow: hidden;
 text-align: center;
 }
 
+#visited-restaurants {
+  text-transform: capitalize;
+
+}
+
 /* ///////// NAV BAR /////////*/
 div.nav {
   overflow: hidden;
@@ -371,18 +376,111 @@ p.welcome-user {
 
 }
 
+/* RESPONSIVE FOR SMALL DEVICE */
+/*phones, up to 600px*/
 
+@media only screen and (max-width: 600px) {
+
+  div.container {
+    padding-top: 15%;
+    padding-bottom: 20%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #E3E3E3;
+    color: #595959;
+    text-align: center;
+    margin-top: 40%;
+    overflow: hidden;
+  }
+
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  }
 /* RESPONSIVE FOR SMALL DEVICE */
 /*phones, 600px and up*/
-@media only screen and (max-width: 700px){
+@media only screen and (min-width: 600px) and (max-width: 950px){
 
+  div.container {
+    padding-top: 10%;
+    padding-bottom: 15%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #E3E3E3;
+    color: #595959;
+    text-align: center;
+    margin-top: 25%;
+    overflow: hidden;
+  }
+
+  [class*="col-"] {
+    width: 46%;
+    float: left;
+    margin-left: 2%;
+  }
+
+  .wrapper:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
 
 }
 
 
 /* RESPONSIVE FOR SMALL DEVICE */
 /*tablets and large phones */
-@media only screen and (min-width: 700px) and (max-width: 768px){
+@media only screen and (min-width: 950px) and (max-width: 1200px){
+
+  div.container {
+    padding-top: 10%;
+    padding-bottom: 15%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #E3E3E3;
+    color: #595959;
+    text-align: center;
+    margin-top: 25%;
+    overflow: hidden;
+  }
+
+  [class*="col-"] {
+    width: 29%;
+    float: left;
+    margin-left: 1%;
+  }
+
+  .wrapper:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 
 }
 /*RESPONSIVE FOR MEDIUM DEVICES */
