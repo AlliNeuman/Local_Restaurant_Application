@@ -5,7 +5,7 @@
 
   <div id="restaurants">
 
-    <% @created_restaurants.order(:name).each do |created_restaurant| %>
+    <% @created_restaurants.order('LOWER(name)').each do |created_restaurant| %>
 
     <div class="wrapper col-6" id="created-restaurant">
       <a href="/restaurants/<%=created_restaurant.id%>" id="restaurant-link"><%=created_restaurant.name%></a>

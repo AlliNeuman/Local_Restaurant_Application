@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
 
 
   def visited_restaurant
-    self.restaurants.all.where("visited= ?", true).order(:name)
+    self.restaurants.all.where("visited= ?", true).order('LOWER(name)')
   end
 
   def wish_list
-    self.restaurants.all.where("visited = ?", false).order(:name)
+    self.restaurants.all.where("visited = ?", false).order('LOWER(name)')
   end
 
 
