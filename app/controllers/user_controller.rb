@@ -4,7 +4,7 @@ class UserController < ApplicationController
     if !logged_in?
       redirect to '/restaurants'
     else
-      @user = User.find_by_id(session[:user_id])
+      @user = current_user
       erb :'users/show'
 
     end

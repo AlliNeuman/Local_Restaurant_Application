@@ -288,6 +288,8 @@ font-size: 12px;
 padding-right: 5%;
 padding-left: 5%;
 padding-bottom: 25%;
+text-transform: capitalize;
+
 
 }
 
@@ -300,7 +302,7 @@ overflow: hidden;
 
 }
 
-#visited-title, #wishlist-title {
+#visited-title, #wishlist-title, #user-created {
 text-align: center;
 }
 

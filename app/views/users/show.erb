@@ -2,9 +2,9 @@
   <h1 class="home-title"><%= @user.username%>'s Restaurants</h1>
 
 
-    <h3 id="visited-title">Visited Restaurants</h3>
+  <h3 id="visited-title">Visited Restaurants</h3>
 
-    <div class="wrapper" id="visited-restaurants">
+  <div class="wrapper" id="visited-restaurants">
     <% @user.visited_restaurant.each do |restaurant| %>
     <div id="visited">
       <a href="/restaurants/<%=restaurant.id%>" class="col-8" id="visited"><%=restaurant.name%></a>
@@ -13,14 +13,23 @@
     <%end%>
   </div>
 
-    <h3 id="wishlist-title">Wishlist Restaurants</h3>
-    <div class="wrapper" id="wishlist-restaurants">
+  <h3 id="wishlist-title">Wishlist Restaurants</h3>
+  <div class="wrapper" id="wishlist-restaurants">
     <% @user.wish_list.each do |restaurant| %>
     <div id="wish-list">
-    <a href="/restaurants/<%=restaurant.id%>" class="col-8" id="wish-list"><%=restaurant.name%></a>
-  </div>
+      <a href="/restaurants/<%=restaurant.id%>" class="col-8" id="wish-list"><%=restaurant.name%></a>
+    </div>
     <%end%>
 
+  </div>
+
+  <h3 id="user-created">User Created Restaurants</h3>
+  <div class="wrapper" id="user-created-restaurants">
+    <% @user.all_created_restaurants.each do |created_restaurant| %>
+    <div id="all-created">
+      <a href="/restaurants/<%=created_restaurant.id%>" class="col-8"> <%=created_restaurant.name%></a>
+    </div>
+    <%end%>
   </div>
 
 
