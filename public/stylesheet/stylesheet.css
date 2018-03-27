@@ -445,9 +445,9 @@ p.welcome-user {
 }
 
 
-/* RESPONSIVE FOR SMALL DEVICE */
-/*tablets and large phones */
-@media only screen and (min-width: 950px) and (max-width: 1200px){
+/* RESPONSIVE FOR LARGE DEVICE */
+
+@media only screen and (min-width: 950px) {
 
   div.container {
     padding-top: 10%;
@@ -481,22 +481,16 @@ p.welcome-user {
     clear: both;
   }
 
+  #index-page.outer-div.center{
+  margin-top: 2%
+  margin-right: 5%;
+  margin-left: 5%;
+  padding-top: 0%;
+  }
 
-}
-/*RESPONSIVE FOR MEDIUM DEVICES */
-@media only screen and (min-width: 768px){
+  #index-page h1 {
+    font-size: 3em;
+  }
 
-}
-
-/*RESPONSIVE FOR LARGE DEVICES */
-/*laptops and desktops*/
-@media only screen and (min-width: 992px){
-
-
-}
-
-/*RESPONSIVE FOR XL DEVICES */
-/*large laptops and desktops */
-@media only screen and (min-width: 1200px){
 
 }
